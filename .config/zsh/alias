@@ -13,7 +13,7 @@ alias tor="sudo systemctl start transmission.service"
 alias y="yay"
 alias yr="yay -Rns"
 alias d=sdcv
-alias ap="nvim $HOME/notes/apps.md"
+alias ap="nvim $HOME/notes/handbook/apps.md"
 alias pok=pokoy
 alias calcurse="calcurse -D ~/notes/calcurse"
 
