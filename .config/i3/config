@@ -1,0 +1,153 @@
+# i3 config file (v4)
+# Some basic settings
+new_window 1pixel
+workspace_auto_back_and_forth yes
+hide_edge_borders vertical
+set $mod Mod4
+font pango: Ubuntu Mono Nerd Font 12
+gaps inner 25
+workspace 1 gaps inner 0
+
+# Autostart
+exec --no-startup-id feh --bg-fill --no-fehbg /home/archie/.config/wall
+exec --no-startup-id $HOME/.config/keymap &
+exec --no-startup-id compton -CGbzo 0 &
+exec --no-startup-id polybar archie &
+exec --no-startup-id redshift &
+exec --no-startup-id pokoy -r &
+exec --no-startup-id unclutter &
+exec --no-startup-id mpd &
+exec --no-startup-id mpc seek 00; mpc pause
+exec --no-startup-id pulsemixer --set-volume 100 &
+
+# apps
+bindsym $mod+Return exec st
+bindsym $mod+r exec st -e ranger
+bindsym $mod+w exec vivaldi-stable
+bindsym $mod+d exec rofi -show run
+
+# Scripts
+bindsym Print exec $HOME/.scripts/screen
+bindsym $mod+grave exec $HOME/.scripts/rofimoji
+bindsym $mod+Shift+m exec $HOME/.scripts/rofimount
+bindsym $mod+Shift+p exec $HOME/.scripts/rofi-system
+bindsym $mod+Shift+v exec $HOME/.scripts/roficheat
+bindsym $mod+b exec $HOME/.scripts/rofibook
+
+# Music
+bindsym $mod+m exec st -e ncmpcpp
+bindsym $mod+p exec mpc toggle
+bindsym $mod+comma exec mpc prev
+bindsym $mod+period exec mpc next
+bindsym $mod+equal exec mpc volume +5
+bindsym $mod+minus exec mpc volume -5
+
+# Gaps
+bindsym $mod+g           gaps inner current plus 5
+bindsym $mod+Shift+g     gaps inner current minus 5
+bindsym $mod+bracketleft gaps outer current plus 5
+bindsym $mod+Shift+bracketleft  gaps outer current minus 5
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+z split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window
+bindsym $mod+y resize grow width 10px or 10ppt
+bindsym $mod+u resize grow height 10px or 10ppt
+bindsym $mod+i resize shrink height 10px or 10ppt
+bindsym $mod+o resize shrink width 10px or 10ppt
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Set Xresources colors:
+set_from_resource $darkblack    color0  #282828
+set_from_resource $black        color8  #928374
+set_from_resource $darkred      color1  #cc241d
+set_from_resource $red          color9  #fb4934
+set_from_resource $darkgreen    color2  #98971a
+set_from_resource $green        color10 #b8bb26
+set_from_resource $darkyellow   color3  #d79921
+set_from_resource $yellow       color11 #fabd2f
+set_from_resource $darkblue     color4  #458588
+set_from_resource $blue         color12 #83a598
+set_from_resource $darkmagenta  color5  #b16286
+set_from_resource $magenta      color13 #d3869b
+set_from_resource $darkcyan     color6  #689d6a
+set_from_resource $cyan         color14 #8ec07c
+set_from_resource $darkwhite    color7  #a89984
+set_from_resource $white        color15 #ebdbb2
+set $transparent                #000000
+
+#                       BORDER          BACKGROUND      TEXT            INDICATOR               CHILD_BORDER
+client.focused          $red            $red            $magenta        $darkmagenta            $darkblue
+client.unfocused        $transparent    $blue           $white          $darkblue               $darkblack
+client.focused_inactive $transparent    $blue           $white          $darkblue               $darkblack
+client.urgent           $darkred        $darkred        $black          $darkred                $darkred
+client.background       $black
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10

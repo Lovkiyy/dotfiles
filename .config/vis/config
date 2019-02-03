@@ -1,0 +1,13 @@
+export TERM=rxvt-256color
+visualizers=spectrum
+audio.sources=pulse
+audio.stereo.enabled=false
+
+colors.scheme=main,mine
+colors.override.terminal=true
+colors.override=true
+
+visualizer.spectrum.smoothing.mode=sps
+visualizer.sgs.smoothing.passes=2
+visualizer.sgs.smoothing.points=3
+visualizer.fps=30

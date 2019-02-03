@@ -1,0 +1,35 @@
+# Clipboard handling
+alias xcopy='xclip -selection clipboard'
+alias xpaste='xclip -selection clipboard -o'
+
+alias cat=bat
+alias top=htop
+alias mon=gotop
+alias g=gtypist
+alias q=qutebrowser
+alias t=task
+alias tr="transmission-remote"
+alias tor="sudo systemctl start transmission.service"
+alias y="yay"
+alias yr="yay -Rns"
+alias d=sdcv
+alias ap="nvim $HOME/notes/apps.md"
+alias pok=pokoy
+alias calcurse="calcurse -D ~/notes/calcurse"
+
+# Global aliases
+alias -g L="| less"
+alias -g G="| grep"
+alias -g mk="mkdir -pv"
+alias -g dush=ncdu
+alias -g v=nvim
+alias -g r=ranger
+
+# Config stuff
+alias cfz="nvim $XDG_CONFIG_HOME/zsh/.zshrc"
+alias cfi="nvim $XDG_CONFIG_HOME/i3/config"
+alias cfp="nvim $XDG_CONFIG_HOME/polybar/config"
+alias cfv="nvim $XDG_CONFIG_HOME/nvim/init.vim"
+alias cfr="nvim $XDG_CONFIG_HOME/ranger/rc.conf"
+alias cfq="nvim $XDG_CONFIG_HOME/qutebrowser/config.py"
+

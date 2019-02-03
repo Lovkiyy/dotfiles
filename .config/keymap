@@ -1,0 +1,2 @@
+#!/bin/bash
+setxkbmap "us,ru" ",winkeys" "grp:toggle,altwin:swap_lalt_lwin,caps:swapescape"
