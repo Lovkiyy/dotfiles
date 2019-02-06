@@ -14,9 +14,7 @@ ENABLE_CORRECTION="true"
 
 # Uncomment to disable marking untracked files under VCS as dirty.
 # This makes repository status check for large repositories faster.
-
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -33,3 +31,7 @@ source /usr/share/fzf/completion.zsh
 
 # Source that later because some of aliases redefine defaults by oh-my-zsh
 source $DOTDIR/alias
+
+#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  #exec startx "$XINITRC" -- vt1
+#fi

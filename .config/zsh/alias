@@ -5,27 +5,35 @@ alias xpaste='xclip -selection clipboard -o'
 alias cat=bat
 alias top=htop
 alias mon=gotop
+
+alias y="yay"
+alias yr="yay -Rns"
+alias yu="yay --noanswerupgrade"
+alias ycl="yay -Sccq --noconfirm; sudo pacman -Sccq --noconfirm"
 alias g=gtypist
 alias q=qutebrowser
 alias t=task
-alias tr="transmission-remote"
-alias tor="sudo systemctl start transmission.service"
-alias y="yay"
-alias yr="yay -Rns"
-alias d=sdcv
-alias ap="nvim $HOME/notes/handbook/apps.md"
+alias d=dict
 alias pok=pokoy
+alias tor="sudo systemctl start transmission.service"
+alias vpn="sudo systemctl start windscribe; sleep 1s; windscribe connect"
+alias vpns="windscribe disconnect"
+
 alias calcurse="calcurse -D ~/notes/calcurse"
 
 # Global aliases
-alias -g L="| less"
-alias -g G="| grep"
-alias -g mk="mkdir -pv"
-alias -g dush=ncdu
 alias -g v=nvim
 alias -g r=ranger
+alias -g mk="mkdir -pv"
+alias -g dush=ncdu
+
+alias -g L="| less"
+alias -g G="| grep"
 
 # Config stuff
+alias cdc="cd $HOME/misc/repos/dots/.config"
+alias ap="nvim $HOME/notes/handbook/apps.md"
+
 alias cfz="nvim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias cfi="nvim $XDG_CONFIG_HOME/i3/config"
 alias cfp="nvim $XDG_CONFIG_HOME/polybar/config"

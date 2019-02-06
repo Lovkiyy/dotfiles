@@ -7,7 +7,9 @@ config.bind(',n','config-cycle content.user_stylesheets ~/.config/qutebrowser/so
 # Fix for Nouveau graphics
 c.qt.force_software_rendering = "chromium"
 
+c.content.cache.size = 30000000
 
+c.fonts.web.family.serif = "M+ 1p"
 
 
 

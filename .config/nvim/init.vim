@@ -71,6 +71,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
+"Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Plugin settings
