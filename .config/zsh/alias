@@ -8,7 +8,7 @@ alias mon=gotop
 
 alias y="yay"
 alias yr="yay -Rns"
-alias yu="yay --noanswerupgrade"
+alias yu="yay -Syuq --noconfirm"
 alias ycl="yay -Sccq --noconfirm; sudo pacman -Sccq --noconfirm"
 alias g=gtypist
 alias q=qutebrowser
