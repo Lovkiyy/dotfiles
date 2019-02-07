@@ -1,6 +1,6 @@
 #!/bin/sh
 src="$HOME/misc/repos/dots/.config"
-destdir="$HOME/misc/repos/example/.config"
+destdir="$HOME/.config"
 
 if [ ! -d $destdir ]
   then
