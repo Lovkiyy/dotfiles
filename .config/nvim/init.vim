@@ -80,6 +80,19 @@ call plug#end()
   let g:lightline = {
         \ 'colorscheme': 'jellybeans',
         \ }
+
+  let g:lightline.active = {
+      \ 'left': [ [ 'mode', 'paste' ], [ 'filename', 'modified' ] ],
+      \ 'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ] }
+
+  let g:lightline.inactive = {
+      \ 'left': [ [ 'filename' ] ],
+      \ 'right': [ [ 'lineinfo' ], [ 'percent' ] ] }
+
+  let g:lightline.tabline = {
+      \ 'left': [ [ 'tabs' ] ],
+      \ 'right': [ [ 'close' ] ] }
+
   set noshowmode
 
   " Gruvbox
