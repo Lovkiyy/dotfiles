@@ -6,14 +6,14 @@ alias cat=bat
 alias top=htop
 alias mon=gotop
 
-alias y="yay"
-alias yr="yay -Rns"
-alias yu="yay -Syuq --noconfirm"
-alias ycl="yay -Sccq --noconfirm; sudo pacman -Sccq --noconfirm"
 alias g=gtypist
 alias q=qutebrowser
 alias t=task
 alias d=dict
+alias y="yay"
+alias yr="yay -Rns"
+alias yu="yay -Syuq --noconfirm"
+alias ycl="yay -Sccq --noconfirm; sudo pacman -Sccq --noconfirm"
 alias pok=pokoy
 alias tor="sudo systemctl start transmission.service"
 alias vpn="sudo systemctl start windscribe; sleep 1s; windscribe connect"
@@ -41,3 +41,10 @@ alias cfv="nvim $XDG_CONFIG_HOME/nvim/init.vim"
 alias cfr="nvim $XDG_CONFIG_HOME/ranger/rc.conf"
 alias cfq="nvim $XDG_CONFIG_HOME/qutebrowser/config.py"
 
+# Git aliases
+alias ga="git add"
+alias gs="git status"
+alias gc="git commit"
+alias gd="git diff"
+alias gpl="git pull"
+alias gps="git push"
