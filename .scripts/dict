@@ -1,0 +1,3 @@
+#!/bin/sh
+sdcv $@ && rm -rf $HOME/.sdcv_history $HOME/.stardict
+

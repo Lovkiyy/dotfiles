@@ -1,0 +1,7 @@
+#!/bin/sh
+killall -q polybar
+
+sleep 1s
+
+exec polybar archie & disown
+echo "Bars Launched..."

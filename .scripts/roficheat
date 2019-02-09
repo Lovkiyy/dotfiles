@@ -1,0 +1,7 @@
+#!/bin/sh
+dir="$HOME/Documents"
+page=$(ls '*.pdf' $dir | grep pdf | rofi -dmenu -i)
+
+if [ $page ]; then
+zathura --mode=fullscreen "$dir/$page"
+fi

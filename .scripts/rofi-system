@@ -1,0 +1,9 @@
+#!/bin/sh
+choice=$(echo -e "poweroff\nreboot" | rofi -dmenu) || exit 1
+if [ $choice = "poweroff" ]; then
+  shutdown -P now
+fi
+
+if [ $choice = "reboot" ]; then
+  shutdown -r now
+fi
