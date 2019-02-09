@@ -5,6 +5,7 @@ alias xpaste='xclip -selection clipboard -o'
 alias cat=bat
 alias top=htop
 alias mon=gotop
+alias vdiff="nvim -d"
 
 alias g=gtypist
 alias q=qutebrowser
@@ -19,7 +20,6 @@ alias tor="sudo systemctl start transmission.service"
 alias vpn="sudo systemctl start windscribe; sleep 1s; windscribe connect"
 alias vpns="windscribe disconnect"
 
-alias calcurse="calcurse -D ~/notes/calcurse"
 
 # Global aliases
 alias -g v=nvim
@@ -48,3 +48,11 @@ alias gc="git commit"
 alias gd="git diff"
 alias gpl="git pull"
 alias gps="git push"
+
+# Defaults
+alias ls="ls -hN --color=tty --group-directories-first"
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
+alias calcurse="calcurse -D ~/notes/calcurse"
+
+alias ...="nocorrect ../.."
+alias ....="../../.."
