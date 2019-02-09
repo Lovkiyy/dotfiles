@@ -54,5 +54,5 @@ alias ls="ls -hN --color=tty --group-directories-first"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias calcurse="calcurse -D ~/notes/calcurse"
 
-alias ...="nocorrect ../.."
+alias -g ...="../.."
 alias ....="../../.."

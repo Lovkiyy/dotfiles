@@ -16,7 +16,7 @@
 
 " Basic Settings
         let mapleader = " "
-        filetype plugin on
+        filetype off            " Helps force plugins to load correctly when it's turned back below
         syntax on
         set termguicolors       " Requires 256 color terminal
         set encoding    =utf-8
@@ -25,15 +25,18 @@
         set shiftwidth  =2
         set softtabstop =4
 
-        set showtabline =2         " Always show tab bar
+        set showtabline =2      " Always show tab bar
         set ignorecase
         set smartcase           " Ignore 'ignorecase' if pattern contains uppercase chars
-        set noswapfile      " No swaps
-        set nohlsearch      " Don't highlight search
+        set noswapfile          " No swaps
+        set nohlsearch          " Don't highlight search
         set number relativenumber
+        set mouse=a             " Mouse support
+        set omnifunc=syntaxcomplete#Complete
+        set clipboard=unnamedplus
 
 " Disable autocomment on newline
-        autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+        autocmd FileType * setlocal formatoptions-=cro
 
 " Keybindings in russian layout
         set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -73,7 +76,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 "Plug 'junegunn/goyo.vim'
 call plug#end()
-
+filetype plugin on
 " Plugin settings
 
   " Lightline
@@ -91,7 +94,7 @@ call plug#end()
 
   let g:lightline.tabline = {
       \ 'left': [ [ 'tabs' ] ],
-      \ 'right': [ [ 'close' ] ] }
+      \ 'right': [ [  ] ] }
 
   set noshowmode
 
@@ -152,3 +155,7 @@ call plug#end()
   "inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
   "vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
   "map <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" Language specific
+autocmd FileType html set breakindent
+autocmd FileType html set tw=80
