@@ -1,8 +1,10 @@
 # i3 config file (v4)
 # Some basic settings
-new_window 1pixel
+#new_window 2pixel
+for_window [class="^.*"] border pixel 2
 workspace_auto_back_and_forth yes
-hide_edge_borders vertical
+hide_edge_borders smart
+smart_gaps on
 set $mod Mod4
 font pango: Ubuntu Mono Nerd Font 12
 gaps inner 25
@@ -90,31 +92,32 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# Set Xresources colors:
-set_from_resource $darkblack    color0  #282828
-set_from_resource $black        color8  #928374
-set_from_resource $darkred      color1  #cc241d
-set_from_resource $red          color9  #fb4934
-set_from_resource $darkgreen    color2  #98971a
-set_from_resource $green        color10 #b8bb26
-set_from_resource $darkyellow   color3  #d79921
-set_from_resource $yellow       color11 #fabd2f
-set_from_resource $darkblue     color4  #458588
-set_from_resource $blue         color12 #83a598
-set_from_resource $darkmagenta  color5  #b16286
-set_from_resource $magenta      color13 #d3869b
-set_from_resource $darkcyan     color6  #689d6a
-set_from_resource $cyan         color14 #8ec07c
-set_from_resource $darkwhite    color7  #a89984
-set_from_resource $white        color15 #ebdbb2
-set $transparent                #000000
+set $c_red_l #fb4934
+set $c_blue_l #83a598
+set $c_blue_d #458588
+set $c_magenta_d #b16286
+set $c_black_d #1d2021
+set $c_cyan_l #8ec07c
+set $c_magenta_l #d3869b
+set $c_yellow_l #fabd2f
+set $c_red_d #cc241d
+set $c_background #282828
+set $c_cyan_d #689d6a
+set $c_green_l #b8bb26
+set $c_foreground #ebdbb2
+set $c_white_d #dbae93
+set $c_green_d #98971a
+set $c_yellow_d #d79921
+set $c_cursor #fff000
+set $c_white_l #fbf1c7
+set $c_black_l #665c54
 
-#                       BORDER          BACKGROUND      TEXT            INDICATOR               CHILD_BORDER
-client.focused          $red            $red            $magenta        $darkmagenta            $darkblue
-client.unfocused        $transparent    $blue           $white          $darkblue               $darkblack
-client.focused_inactive $transparent    $blue           $white          $darkblue               $darkblack
-client.urgent           $darkred        $darkred        $black          $darkred                $darkred
-client.background       $black
+#class                  background?   border        text          split
+client.focused          $c_white_d    $c_white_d    $c_black_l    $c_white_d
+client.focused_inactive $c_black_d    $c_background $c_black_l    $c_black_d
+client.unfocused        $c_black_d    $c_background $c_black_l    $c_black_d
+client.urgent           $c_magenta_l  $c_magenta_l  $c_black_l    $c_magenta_l
+client.background       $c_background
 
 set $ws1 "1"
 set $ws2 "2"
