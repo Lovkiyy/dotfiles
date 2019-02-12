@@ -86,7 +86,7 @@ filetype plugin on
 
   let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ], [ 'filename', 'modified' ] ],
-      \ 'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ] }
+      \ 'right': [ [ 'lineinfo' ], [ 'percent' ], ] }
 
   let g:lightline.inactive = {
       \ 'left': [ [ 'filename' ] ],

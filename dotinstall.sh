@@ -4,7 +4,7 @@ destdir="$HOME/.config"
 
 if [ ! -d $destdir ]
   then
-    echo wtf!? Create $destdir; exit 1
+    echo $destdir does not exist; exit 1
 fi
 
 for i in $(find "$src" -maxdepth 1 -mindepth 1)

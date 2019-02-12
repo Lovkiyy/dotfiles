@@ -7,13 +7,13 @@ hide_edge_borders smart
 smart_gaps on
 set $mod Mod4
 font pango: Ubuntu Mono Nerd Font 12
-gaps inner 25
+gaps inner 15
 workspace 1 gaps inner 0
 
 # Autostart
 exec --no-startup-id hsetroot -center $XDG_CONFIG_HOME/wall
 exec --no-startup-id $HOME/.config/keymap &
-exec --no-startup-id xcompmgr -n -f -c -D 3 -I 0.06 -O 0.06
+exec --no-startup-id xcompmgr -n -f -c -D 2 -I 0.04 -O 0.04
 exec --no-startup-id polybar archie &
 exec --no-startup-id redshift &
 exec --no-startup-id pokoy -r &

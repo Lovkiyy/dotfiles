@@ -15,6 +15,7 @@ alias y="yay"
 alias yr="yay -Rns"
 alias yu="yay -Syuq --noconfirm"
 alias ycl="yay -Sccq --noconfirm; sudo pacman -Sccq --noconfirm"
+alias ns="fzf-notes.sh"
 alias pok=pokoy
 alias tor="sudo systemctl start transmission.service"
 alias vpn="sudo systemctl start windscribe; sleep 1s; windscribe connect"
