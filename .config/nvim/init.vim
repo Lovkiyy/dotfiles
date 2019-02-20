@@ -23,20 +23,19 @@
 
         set expandtab
         set shiftwidth  =2
+        set tabstop     =4
         set softtabstop =4
 
-        set showtabline =2      " Always show tab bar
+        set showtabline =1      " Always show tab bar
         set ignorecase
         set smartcase           " Ignore 'ignorecase' if pattern contains uppercase chars
         set noswapfile          " No swaps
         set nohlsearch          " Don't highlight search
+        set nostartofline
         set number relativenumber
         set mouse=a             " Mouse support
         set omnifunc=syntaxcomplete#Complete
         set clipboard=unnamedplus
-
-" Disable autocomment on newline
-        autocmd FileType * setlocal formatoptions-=cro
 
 " Keybindings in russian layout
         set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -77,6 +76,10 @@ Plug 'junegunn/fzf'
 "Plug 'junegunn/goyo.vim'
 call plug#end()
 filetype plugin on
+
+" Disable autocomment on newline
+        autocmd FileType * setlocal formatoptions-=cro
+
 " Plugin settings
 
   " Lightline
@@ -151,6 +154,14 @@ filetype plugin on
   nnoremap <C-k> <C-w>k
   nnoremap <C-l> <C-w>l
 
+  " Moving characters
+  nnoremap L xp
+  nnoremap H xP
+
+  nnoremap <leader>w :w<CR>
+
+  nnoremap <leader>tn :tabnew<CR>
+
   " Navigating with guides
   "inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
   "vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
@@ -159,3 +170,4 @@ filetype plugin on
 " Language specific
 autocmd FileType html set breakindent
 autocmd FileType html set tw=80
+autocmd FileType sh,bash,perl,python,ruby nno <leader>ex :! chmod +x %<CR>

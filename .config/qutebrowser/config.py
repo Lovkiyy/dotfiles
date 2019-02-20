@@ -11,6 +11,8 @@ c.content.cache.size = 30000000
 
 c.fonts.web.family.serif = "M+ 1p"
 
+c.editor.command = ['st', '-e', 'nvim', '{}']
+
 
 
 

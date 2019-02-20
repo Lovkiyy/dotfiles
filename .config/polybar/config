@@ -43,7 +43,7 @@ font-1 = UbuntuMono Nerd Font:pixelsize=15;1
 font-2 = EmojiOne:scale=10;1
 font-3 = UbuntuMono Nerd Font:pixelsize=18;1
 
-modules-left = taskwarrior
+modules-left =
 modules-right = date arch-update
 modules-center = i3 bspwm
 

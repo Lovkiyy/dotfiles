@@ -13,14 +13,15 @@ hide_edge_borders smart
 smart_gaps on
 
 # Autostart
-exec --no-startup-id $HOME/.config/keymap &
+#exec --no-startup-id $HOME/.config/keymap
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:toggle,altwin:swap_lalt_lwin,caps:swapescape"
 exec --no-startup-id hsetroot -center $XDG_CONFIG_HOME/wall
 
 exec --no-startup-id xcompmgr -n -f -c -D 2 -I 0.04 -O 0.04 &
-exec --no-startup-id polybar archie &
 exec --no-startup-id redshift &
 exec --no-startup-id pokoy -r &
 exec --no-startup-id unclutter &
+exec --no-startup-id polybar archie &
 exec --no-startup-id mpd &
 
 # apps
@@ -31,9 +32,9 @@ bindsym $mod+d exec rofi -show run
 
 # Scripts
 bindsym Print exec $HOME/.scripts/screen
+bindsym $mod+Shift+p exec $HOME/.scripts/rofi-system
 bindsym $mod+grave exec $HOME/.scripts/rofimoji
 bindsym $mod+Shift+m exec $HOME/.scripts/rofimount
-bindsym $mod+Shift+p exec $HOME/.scripts/rofi-system
 bindsym $mod+Shift+v exec $HOME/.scripts/roficheat
 bindsym $mod+b exec $HOME/.scripts/rofibook
 
