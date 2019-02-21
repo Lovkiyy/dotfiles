@@ -1,25 +1,21 @@
 # Clipboard handling
-alias xcopy='xclip -selection clipboard'
-alias xpaste='xclip -selection clipboard -o'
+alias xcopy='xsel -b -i'
+alias xpaste='xsel -b -o'
 
 alias cat=bat
-alias top=htop
 alias mon=gotop
-alias vdiff="nvim -d"
 
-alias g=gtypist
-alias q=qutebrowser
-alias t=task
+alias ka=killall
+alias _=sudo
 alias d=dict
 alias y="yay"
 alias yr="yay -Rns"
 alias yu="yay -Syuq --noconfirm"
-alias ycl="yay -Sccq --noconfirm; sudo pacman -Sccq --noconfirm"
-alias ns="fzf-notes.sh"
-alias pok=pokoy
+alias ycl="yay -Sccq --noconfirm && sudo pacman -Sccq --noconfirm"
 alias tor="sudo systemctl start transmission.service"
 alias vpn="sudo systemctl start windscribe; sleep 1s; windscribe connect"
 alias vpns="windscribe disconnect"
+alias ns="fzf-notes.sh"
 
 
 # Global aliases
@@ -35,7 +31,6 @@ alias -g G="| grep"
 alias cdc="cd $HOME/misc/repos/dots/.config"
 alias ap="nvim $HOME/notes/handbook/apps.md"
 
-alias cfz="nvim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias cfi="nvim $XDG_CONFIG_HOME/i3/config"
 alias cfp="nvim $XDG_CONFIG_HOME/polybar/config"
 alias cfv="nvim $XDG_CONFIG_HOME/nvim/init.vim"
@@ -55,5 +50,5 @@ alias ls="ls -hN --color=tty --group-directories-first"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias calcurse="calcurse -D ~/notes/calcurse"
 
-alias -g ...="../.."
+alias ...="../.."
 alias ....="../../.."
