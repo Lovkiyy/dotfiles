@@ -26,3 +26,8 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+# Autostart X on login
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx i3
+fi
