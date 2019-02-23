@@ -1,0 +1,3 @@
+#!/bin/sh
+source $XDG_CONFIG_HOME/qutebrowser/prox
+qutebrowser --temp-basedir -s qt.force_software_rendering chromium
