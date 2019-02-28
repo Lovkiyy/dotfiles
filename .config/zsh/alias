@@ -5,6 +5,7 @@ alias xpaste='xsel -b -o'
 alias cat=bat
 alias mon=gotop
 
+alias ex=exercism
 alias ka=killall
 alias _=sudo
 alias d=dict
@@ -44,6 +45,9 @@ alias gc="git commit"
 alias gd="git diff"
 alias gpl="git pull"
 alias gps="git push"
+
+# Go aliases
+alias gor="go run"
 
 # Defaults
 alias ls="ls -hN --color=tty --group-directories-first"
