@@ -1,7 +1,7 @@
 #!/bin/sh
 file=$(mktemp /tmp/vtype.XXXXX)
 
-xsel -p -o > $file
+xsel -b -o > $file
 
 # For some reason i can't fold file in place
 change=$(fold -w 80 -s $file)
