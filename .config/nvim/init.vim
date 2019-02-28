@@ -175,3 +175,4 @@ autocmd FileType sh,bash,perl,python,ruby nnoremap <leader>ex :! chmod +x %<CR>
 
 autocmd FileType go nnoremap <leader>c :w<CR> :!go run %<CR>
 autocmd FileType go set noexpandtab shiftwidth=0
+autocmd FileType go nnoremap <leader>t :!go test -v<CR>
