@@ -22,7 +22,6 @@ exec --no-startup-id redshift &
 exec --no-startup-id pokoy -r &
 exec --no-startup-id unclutter &
 exec --no-startup-id polybar archie &
-exec --no-startup-id mpd &
 
 # apps
 bindsym $mod+Return exec st
@@ -39,12 +38,14 @@ bindsym $mod+Shift+v exec $HOME/.scripts/roficheat
 bindsym $mod+b exec $HOME/.scripts/rofibook
 
 # Music
-bindsym $mod+m exec st -e ncmpcpp
-bindsym $mod+p exec mpc toggle
-bindsym $mod+comma exec mpc prev
-bindsym $mod+period exec mpc next
-bindsym $mod+equal exec mpc volume +5
-bindsym $mod+minus exec mpc volume -5
+bindsym $mod+m exec st -e cmus
+bindsym $mod+p exec cmus-remote --pause
+bindsym $mod+comma exec cmus-remote --prev
+bindsym $mod+period exec cmus-remote --next
+
+# Volume control
+bindsym $mod+equal exec amixer sset PCM 5+
+bindsym $mod+minus exec amixer sset PCM 5-
 
 # Gaps
 bindsym $mod+g           gaps inner current plus 5
