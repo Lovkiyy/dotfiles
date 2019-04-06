@@ -10,7 +10,6 @@
 break                           10:00   0:30    0:00
 break                           60:00   3:00    1:00
 
-# Example settings. They are not default.
+# Do not active when window of certain class is focused
 
 block                           mpv
-block                           hollow_knight.x86_64
