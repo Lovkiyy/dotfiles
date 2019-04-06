@@ -1,6 +1,6 @@
 #!/bin/sh
 dir="$HOME/diskg/watch"
-watching="Hyouka"
+watching=""
 series=$(ls $dir/$watching | grep .mkv)
 choice=$(echo -e "$series" | rofi -width 40 -sep "\n" -dmenu)
 if [ "$choice" ]; then
