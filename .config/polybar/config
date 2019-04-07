@@ -61,7 +61,7 @@ interval = 5
 date = "🗓 %A %d "
 date-alt = " %Y-%m-%d"
 
-time = " ⏰ %H:%M"
+time = "—  %H:%M"
 time-alt = %H:%M:%S
 
 label = "%date% %time%"
