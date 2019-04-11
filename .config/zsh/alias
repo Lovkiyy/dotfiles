@@ -9,15 +9,10 @@ alias ex=exercism
 alias ka=killall
 alias _=sudo
 alias d=dict
-alias y="yay"
-alias yr="yay -Rns"
-alias yu="yay -Syuq --noconfirm"
-alias ycl="yay -Sccq --noconfirm && sudo pacman -Sccq --noconfirm"
-alias tor="sudo systemctl start transmission.service"
-alias vpn="sudo systemctl start windscribe; sleep 1s; windscribe connect"
-alias vpns="windscribe disconnect"
+alias xi="sudo xbps-install"
+alias xr="sudo xbps-remove"
+alias xq="xbps-query"
 alias ns="fzf-notes.sh"
-
 
 # Global aliases
 alias -g v=nvim
@@ -29,8 +24,7 @@ alias -g L="| less"
 alias -g G="| grep"
 
 # Config stuff
-alias cdc="cd $HOME/misc/repos/dots/.config"
-alias ap="nvim $HOME/notes/handbook/apps.md"
+alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 
 alias cfi="nvim $XDG_CONFIG_HOME/i3/config"
 alias cfp="nvim $XDG_CONFIG_HOME/polybar/config"
