@@ -1,5 +1,5 @@
 # Path to my oh-my-zsh installation.
-export ZSH="$HOME/misc/repos/oh-my-zsh"
+export ZSH="$HOME/src/oh-my-zsh"
 
 ZSH_THEME=agnoster
 DEFAULT_USER=archie
@@ -30,6 +30,6 @@ export CDPATH=$HOME
 export DOTDIR="$HOME/.config/zsh"
 source $DOTDIR/alias
 
-#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  #exec startx "$XINITRC" -- vt1
-#fi
+if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
+  startx
+fi
