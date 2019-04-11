@@ -1,5 +1,5 @@
 #!/bin/sh
-dir="$HOME/diskg/watch"
+dir="$HOME/usr/vid"
 watching=""
 series=$(ls $dir/$watching | grep .mkv)
 choice=$(echo -e "$series" | rofi -width 40 -sep "\n" -dmenu)

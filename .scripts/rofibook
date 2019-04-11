@@ -1,5 +1,5 @@
 #!/bin/sh
-dir="$HOME/Documents/books"
+dir="$HOME/usr/doc/books"
 page=$(ls $dir | grep pdf | rofi -lines 13 -dmenu -i)
 
 if [ $page ]; then

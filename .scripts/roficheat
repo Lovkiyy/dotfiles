@@ -1,5 +1,5 @@
 #!/bin/sh
-dir="$HOME/Documents"
+dir="$HOME/usr/doc"
 page=$(ls '*.pdf' $dir | grep pdf | rofi -dmenu -i)
 
 if [ $page ]; then
