@@ -4,7 +4,8 @@ c.qt.force_software_rendering = "chromium"
 # Cache around 30 megs
 c.content.cache.size = 30000000
 
-c.fonts.web.family.serif = "M+ 1p"
+c.completion.height = "45%"
+c.completion.open_categories = ['bookmarks', 'history', 'quickmarks', 'searchengines']
 
 c.aliases = {'w': 'session-save',
         'wq': 'quit --save',
@@ -20,6 +21,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'w': 'https://en.wikipedia.org/w/index.php?search={}',
     'wru': 'https://ru.wikipedia.org/w/index.php?search={}',
     'gh': 'https://github.com/search?q={}',
+    'j': 'https://jisho.org/search/{}',
+    'ya': 'https://yandex.ru/search/?text={}',
     'a': 'https://myanimelist.net/search/all?q={}'}
 
 c.bindings.commands = {
@@ -43,6 +46,22 @@ c.bindings.commands = {
 c.content.user_stylesheets = ["$HOME/.config/qutebrowser/solarized-dark-all.css"]
 # Toggle stylesheet
 config.bind(',n','config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-dark-all.css ""')
+
+# Fonts settings
+c.fonts.web.family.serif = "M+ 1p"
+c.fonts.monospace = "UbuntuMono Nerd Font"
+c.fonts.completion.category = "bold 13pt monospace"
+c.fonts.completion.entry = "13pt monospace"
+c.fonts.debug_console = "13pt monospace"
+c.fonts.downloads = "13pt monospace"
+c.fonts.hints = "13pt monospace"
+c.fonts.keyhint = "13pt monospace"
+c.fonts.messages.error = "13pt monospace"
+c.fonts.messages.info = "13pt monospace"
+c.fonts.messages.warning = "13pt monospace"
+c.fonts.prompts = "13pt monospace"
+c.fonts.statusbar = "13pt monospace"
+c.fonts.tabs = "13pt monospace"
 
 # i am still waiting for it
 #config.set('content.user_stylesheets', [], '*://github.com')
