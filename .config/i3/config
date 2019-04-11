@@ -3,8 +3,10 @@
 # Some basic settings
 for_window [class="^.*"] border pixel 2
 workspace_auto_back_and_forth yes
-set $mod Mod4
 font pango: Ubuntu Mono Nerd Font 12
+
+set $mod Mod4
+set $scripts $HOME/.scripts
 
 gaps inner 15
 workspace 1 gaps inner 0
@@ -29,12 +31,12 @@ bindsym $mod+w exec qutebrowser
 bindsym $mod+d exec rofi -show run
 
 # Scripts
-bindsym Print exec $HOME/.scripts/screen
-bindsym $mod+Shift+p exec $HOME/.scripts/rofi-system
-bindsym $mod+grave exec $HOME/.scripts/rofimoji
-bindsym $mod+Shift+m exec $HOME/.scripts/rofimount
-bindsym $mod+Shift+v exec $HOME/.scripts/roficheat
-bindsym $mod+b exec $HOME/.scripts/rofibook
+bindsym Print exec $scripts/screen
+bindsym $mod+Shift+p exec $scripts/rofi-system
+bindsym $mod+grave exec $scripts/rofimoji
+bindsym $mod+Shift+m exec $scripts/rofimount
+bindsym $mod+Shift+v exec $scripts/roficheat
+bindsym $mod+b exec $scripts/rofibook
 
 # Music
 bindsym $mod+m exec st -e cmus
