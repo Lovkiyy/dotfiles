@@ -20,8 +20,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # Some addons
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp)"
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source /usr/share/doc/fzf/key-bindings.zsh
+source /usr/share/doc/fzf/completion.zsh
 
 
 # CDPATH for autocompletion
