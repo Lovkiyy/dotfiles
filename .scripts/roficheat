@@ -1,5 +1,5 @@
 #!/bin/sh
-dir="$HOME/usr/doc"
+dir="$HOME/usr/doc/cheat"
 page=$(ls '*.pdf' $dir | grep pdf | rofi -dmenu -i)
 
 if [ $page ]; then
