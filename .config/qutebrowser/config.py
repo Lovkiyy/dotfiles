@@ -4,6 +4,8 @@ c.qt.force_software_rendering = "chromium"
 # Cache around 30 megs
 c.content.cache.size = 30000000
 
+c.downloads.location.directory = "/home/archie/tmp"
+
 c.completion.height = "45%"
 c.completion.open_categories = ['bookmarks', 'history', 'quickmarks', 'searchengines']
 
@@ -23,6 +25,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'gh': 'https://github.com/search?q={}',
     'j': 'https://jisho.org/search/{}',
     'ya': 'https://yandex.ru/search/?text={}',
+    'yama': 'https://market.yandex.ru/search?text={}&local-offers-first=1',
     'a': 'https://myanimelist.net/search/all?q={}'}
 
 c.bindings.commands = {
