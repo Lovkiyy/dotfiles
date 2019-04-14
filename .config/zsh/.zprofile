@@ -8,7 +8,7 @@ export BROWSER=qutebrowser
 export PATH=$PATH:~/.scripts
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export XAUTHORITY=/run/user/1000/Xauthority
+export XAUTHORITY=/tmp/Xauthority
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
