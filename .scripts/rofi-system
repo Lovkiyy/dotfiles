@@ -1,9 +1,9 @@
 #!/bin/sh
-choice=$(echo "poweroff\nreboot" | rofi -dmenu) || exit 1
+choice=$(echo -n "poweroff\nreboot" | rofi -dmenu) || exit 1
 if [ $choice="poweroff" ]; then
-  sudo shutdown -P now
+  sudo poweroff
 fi
 
 if [ $choice="reboot" ]; then
-  sudo shutdown -r now
+  sudo reboot
 fi
