@@ -1,6 +1,6 @@
 # Clipboard handling
-alias xcopy='xsel -b -i'
-alias xpaste='xsel -b -o'
+alias xcopy='xsel -b -i -l /dev/null'
+alias xpaste='xsel -b -o -l /dev/null'
 
 alias cat=bat
 alias mon=gotop
@@ -13,6 +13,7 @@ alias xi="sudo xbps-install"
 alias xr="sudo xbps-remove"
 alias xq="xbps-query"
 alias ns="fzf-notes.sh"
+alias tor="transmission-daemon"
 
 # Global aliases
 alias -g v=nvim
