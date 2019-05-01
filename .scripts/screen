@@ -1,2 +1,2 @@
 #!/bin/sh
-ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -vframes 1 $HOME/usr/img/$(echo $(date "+%m%d%H%M%S"))screen.png
+ffmpeg -f x11grab -video_size 1600x900 -i $DISPLAY -vframes 1 $HOME/usr/img/$(echo $(date "+%m%d%H%M%S"))screen.png
