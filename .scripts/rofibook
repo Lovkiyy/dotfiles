@@ -2,6 +2,6 @@
 dir="$HOME/usr/doc/books"
 page=$(ls $dir | grep pdf | rofi -lines 13 -dmenu -i)
 
-if [ $page ]; then
+if [ "${page}" ]; then
 zathura "$dir/$page"
 fi

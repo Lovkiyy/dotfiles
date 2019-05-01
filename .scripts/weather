@@ -1,4 +1,4 @@
 #!/bin/sh
 location=Krasnodar
 weather=$(curl -s "wttr.in/Krasnodar")
-echo -e "$weather"
+echo "$weather"
