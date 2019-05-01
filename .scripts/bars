@@ -3,5 +3,5 @@ killall -q polybar
 
 sleep 1s
 
-exec polybar archie & disown
+exec polybar archie &
 echo "Bars Launched..."
