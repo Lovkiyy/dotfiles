@@ -5,6 +5,7 @@ c.qt.force_software_rendering = "chromium"
 c.content.cache.size = 30000000
 
 c.downloads.location.directory = "/home/archie/tmp"
+c.downloads.remove_finished = 60
 
 c.completion.height = "45%"
 c.completion.open_categories = ['bookmarks', 'history', 'quickmarks', 'searchengines']
