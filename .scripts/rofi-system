@@ -1,9 +1,11 @@
 #!/bin/sh
-choice=$(echo -n "poweroff\nreboot" | rofi -dmenu) || exit 1
-if [ $choice="poweroff" ]; then
+choice=$(echo -n "suspend\nlock\npoweroff\nreboot" | rofi -dmenu) || exit 1
+if [ $choice = "suspend" ]; then
+  sudo zzz
+elif [ $choice = "lock" ]; then
+  xset dpms force off && slock
+elif [ $choice = "poweroff" ]; then
   sudo poweroff
-fi
-
-if [ $choice="reboot" ]; then
+elif [ $choice = "reboot" ]; then
   sudo reboot
 fi
