@@ -15,10 +15,12 @@ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export LESSHISTFILE=-
 export _FASD_DATA="$XDG_DATA_HOME/fasd"
+export PASSWORD_STORE_DIR="$HOME/src/backup/pass"
+export PASSWORD_CLIP_TIME="120"
 
 
-# Less colors
-export LESS=-R
+# Less config
+export LESS="-R -M"
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
 export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
