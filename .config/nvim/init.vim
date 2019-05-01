@@ -140,7 +140,7 @@ filetype plugin on
   imap <C-a> <C-o>0
   imap <C-e> <C-o>$
   map <C-e> $
-  map <C-a> 0
+  "map <C-a> 0
 
   " sane movement with wrap turned on
   nnoremap j gj
