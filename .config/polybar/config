@@ -15,143 +15,156 @@
 ;   The README contains alot of information
 ;
 ;==========================================================
-
 [colors]
 background = #282828
 foreground = #ebdbb2
+grey = #928374
+red = #cc241d
 lightred = #fb4934
+green = #98971a
+lightgreen = #b8bb26
+yellow = #d79921
+lightyellow = #fabd2f
+blue = #458588
+lightblue = #83a598
+purple = #b16286
+lightpurple = #d3869b
+aqua = #689d6a
+lightaqua = #8ec07c
+orange = #d65d0e
+lightorange = #fe8019
 
 [bar/archie]
+monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 25
+height = 18
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;line-size = 3
-;line-color = #f00
+padding-left = 0
+padding-right = 1
 
-padding-left = 25
-padding-right = 15
+module-margin-left = 0
+module-margin-right = 0
 
-module-margin-left = 2
-module-margin-right = 5
+font-0 = Terminus:style=Regular:pixelsize=16:antialias=false;1
+font-1 = UbuntuMono Nerd Font:pixelsize=12;2
+font-2 = siji:pixelsize=10;3
+font-3 = Terminus:style=Regular:pixelsize=28:antialias=false;4
 
-font-0 = M+ 1p:style=bold:pixelsize=13;1
-font-1 = UbuntuMono Nerd Font:pixelsize=15;1
-font-2 = EmojiOne:scale=10;1
-font-3 = UbuntuMono Nerd Font:pixelsize=18;1
+modules-left = i3
+modules-right = backlight battery-comb date kbd
+modules-center =
 
-modules-left =
-modules-right = date arch-update
-modules-center = i3 bspwm
+tray-position = none
+;tray-padding = 2
 
-tray-position = right
-tray-padding = 2
+[module/powerline]
+color = ${colors.purple}
+format-prefix = ""
+format-prefix-font = 4
+format-prefix-background = ${root.background}
+format-prefix-foreground = ${self.color}
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
+format-suffix = " "
+format-suffix-font = 4
+format-suffix-foreground = ${root.background}
+format-suffix-background = ${self.color}
+
+format-background = ${self.color}
+
+[module/kbd]
+type = custom/script
+exec = $HOME/src/scripts/kbd-layout.sh
+interval = 2
+
+[module/backlight]
+type = internal/xbacklight
+enable-scroll = false
+format = <label>
+label = "盛 %percentage%%"
+
+format-foreground = #ffffff
+color = ${colors.yellow}
+inherit = module/powerline
 
 [module/date]
 type = internal/date
-interval = 5
-
-date = "🗓 %A %d "
-date-alt = " %Y-%m-%d"
-
-time = "—  %H:%M"
-time-alt = %H:%M:%S
-
-label = "%date% %time%"
-
-[module/arch-update]
-type = custom/script
-exec = ~/.config/polybar/arch-update.sh
 interval = 30
-label = "🔃"
-;label =Updates - %output%
 
-[module/taskwarrior]
-interval = 30
+date = "%A %d"
+date-alt = "%Y-%m-%d"
+
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+
+label = "%{T3}%{T-} %date% - %time%"
+color = ${colors.red}
+inherit = module/powerline
+
+[module/battery-comb]
 type = custom/script
-exec = $HOME/.config/polybar/taskwarrior
-format = <label>
-format-prefix = " "
+exec = $HOME/src/scripts/battery-combined-udev.sh
+tail = true
+interval = 20
+
+color = ${colors.purple}
+inherit = module/powerline
 
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;6
+enable-click = false
+enable-scroll = false
+
+ws-icon-0 = 1;%{T3}%{T-} web
+ws-icon-1 = 2;%{T3}%{T-} term
+ws-icon-2 = 3;%{T3}%{T-} dev
+ws-icon-3 = 4;%{T3}%{T-} media
+ws-icon-4 = 5;%{T3}%{T-} music
+ws-icon-5 = 6;%{T3}%{T-} etc
 ws-icon-6 = 7;7
 ws-icon-7 = 8;8
 ws-icon-8 = 9;9
-ws-icon-9 = 10;ﱘ
-ws-icon-default = ♟
+ws-icon-9 = 10;10
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
 ;   <label-mode> (default)
 format = <label-state> <label-mode>
 
-; Available tokens:
-;   %mode%
-; Default: %mode%
 label-mode = %mode%
-label-mode-padding = 0
+label-mode-padding = 1
 label-mode-background = #e60053
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%
-label-focused-foreground = #f0eac1
-label-focused-background = #4f3f47
-label-focused-padding = 4
+label-focused-foreground = #ffffff
+label-focused-background = #689d6a
+label-focused-padding = 1
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
 label-unfocused = %icon%
-label-unfocused-padding = 4
+label-unfocused-padding = 1
 label-unfocused-foreground = #928374
+label-unfocused-background = #1e1a0c
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
 label-focused = %icon%
 label-visible = %icon%
-label-visible-padding = 4
+label-visible-padding = 1
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
 label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #c64e3d
-label-urgent-padding = 4
+label-urgent-padding = 1
 
 ; Separator in between workspaces
 ;label-separator = ""
 ;label-separator-padding = 0
 ;label-separator-foreground = #ffb52a
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
 
 [module/bspwm]
 type = internal/bspwm
@@ -175,7 +188,6 @@ label-empty-padding = 4
 
 ; Separator in between workspaces
 ; label-separator = |
-
 
 [settings]
 screenchange-reload = true
