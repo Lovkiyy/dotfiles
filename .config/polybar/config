@@ -37,7 +37,7 @@ lightorange = #fe8019
 [bar/archie]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 18
+height = 15
 fixed-center = true
 
 background = ${colors.background}
@@ -49,13 +49,12 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Terminus:style=Regular:pixelsize=16:antialias=false;1
+font-0 = Terminus:size=12:antialias=false;1
 font-1 = UbuntuMono Nerd Font:pixelsize=12;2
-font-2 = siji:pixelsize=10;3
-font-3 = Terminus:style=Regular:pixelsize=28:antialias=false;4
+font-2 = Siji;3
 
-modules-left = i3
-modules-right = backlight battery-comb date kbd
+modules-left = bspwm i3
+modules-right = backlight battery-comb date
 modules-center =
 
 tray-position = none
@@ -63,16 +62,8 @@ tray-position = none
 
 [module/powerline]
 color = ${colors.purple}
-format-prefix = ""
-format-prefix-font = 4
-format-prefix-background = ${root.background}
-format-prefix-foreground = ${self.color}
 
-format-suffix = " "
-format-suffix-font = 4
-format-suffix-foreground = ${root.background}
-format-suffix-background = ${self.color}
-
+format-padding = 2
 format-background = ${self.color}
 
 [module/kbd]
@@ -84,7 +75,7 @@ interval = 2
 type = internal/xbacklight
 enable-scroll = false
 format = <label>
-label = "盛 %percentage%%"
+label = "%{T3}%{T-} %percentage%%"
 
 format-foreground = #ffffff
 color = ${colors.yellow}
@@ -112,6 +103,15 @@ interval = 20
 
 color = ${colors.purple}
 inherit = module/powerline
+
+[module/void-update]
+type = custom/script
+exec = $HOME/src/scripts/updates.sh
+format-prefix = ""
+interval = 40
+
+inherit = module/powerline
+color = ${root.background}
 
 [module/i3]
 type = internal/i3
@@ -169,22 +169,37 @@ label = %title:0:30:...%
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-foreground = #f0eac1
-label-focused-background = #4f3f47
-label-focused-padding = 4
+enable-click = false
+enable-scroll = false
 
-label-occupied = %index%
-label-occupied-padding = 4
+label-focused = %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #689d6a
+label-focused-padding = 1
 
-label-urgent = %index%!
+label-occupied = %icon%
+label-occupied-padding = 1
+
+label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #c64e3d
-label-urgent-padding = 4
+label-urgent-padding = 1
 
-label-empty = %index%
+;label-empty = %index%
+label-empty =
 label-empty-foreground = #928374
-label-empty-padding = 4
+label-empty-padding = 1
+
+ws-icon-0 = 1;%{T3}%{T-} web
+ws-icon-1 = 2;%{T3}%{T-} term
+ws-icon-2 = 3;%{T3}%{T-} dev
+ws-icon-3 = 4;%{T3}%{T-} media
+ws-icon-4 = 5;%{T3}%{T-} music
+ws-icon-5 = 6;%{T3}%{T-} etc
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;10
 
 ; Separator in between workspaces
 ; label-separator = |
