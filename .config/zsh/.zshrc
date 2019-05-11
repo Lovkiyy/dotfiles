@@ -13,10 +13,30 @@ ENABLE_CORRECTION="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 plugins=(
-vi-mode
 )
 
-source "$ZSH/oh-my-zsh.sh"
+autoload -U compaudit compinit
+compinit -u -C -d
+
+bindkey -e
+
+setopt correct_all
+
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt inc_append_history
+setopt hist_verify
+setopt share_history
+
+setopt prompt_subst
+# Menu completion
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+source $HOME/.config/zsh/agnoster.zsh-theme
+source $HOME/.config/zsh/functions
+
+#source "$ZSH/oh-my-zsh.sh"
 
 # Some addons
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp)"
