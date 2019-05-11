@@ -16,7 +16,7 @@ xinput disable 'SynPS/2 Synaptics TouchPad'
 
 redshift &
 pokoy -r &
-sxhkd -c $HOME/.config/sxhkd/bspwm-sxhkdrc &
+sxhkd &
 xbanish &
 
 exec bspwm
