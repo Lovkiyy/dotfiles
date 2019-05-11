@@ -10,11 +10,14 @@ xgamma -bgamma 0.65
 sudo xbacklight 20
 xset dpms 0 0 240
 setxkbmap "us,ru" ",winkeys" "grp:toggle,altwin:swap_lalt_lwin,caps:swapescape"
+xmodmap $XDG_CONFIG_HOME/X11/modmap
+xsetroot -cursor_name left_ptr
 xinput disable 'SynPS/2 Synaptics TouchPad'
 
 redshift &
 pokoy -r &
-sxhkd &
+sxhkd -c $HOME/.config/sxhkd/bspwm-sxhkdrc &
 xbanish &
 
-exec i3
+exec bspwm
+#exec i3
