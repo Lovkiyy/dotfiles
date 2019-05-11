@@ -9,7 +9,6 @@ export PATH=$PATH:~/.scripts
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XAUTHORITY=/tmp/Xauthority
-export HISTFILE="$XDG_DATA_HOME/zsh/history"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
@@ -18,6 +17,9 @@ export _FASD_DATA="$XDG_DATA_HOME/fasd"
 export PASSWORD_STORE_DIR="$HOME/src/backup/pass"
 export PASSWORD_CLIP_TIME="120"
 
+export HISTFILE="$XDG_DATA_HOME/zsh/history"
+export HISTSIZE=30000
+export SAVEHIST=10000
 
 # Less config
 export LESS="-R -M"
