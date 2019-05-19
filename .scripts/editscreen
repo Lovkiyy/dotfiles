@@ -3,6 +3,7 @@
 # keyboard_select st patch. Set $EDITOR to whatever you want.
 
 tmpfile=$(mktemp /tmp/st-edit.XXXXXX)
+trap '"rm -f $tmpfile"' 0 1 15
 sed -n p > "$tmpfile"
-st -e "nvim" "$tmpfile"
+st -e 'nvim' "$tmpfile"
 rm "$tmpfile"
