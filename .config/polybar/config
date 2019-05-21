@@ -186,7 +186,7 @@ label-urgent-background = #c64e3d
 label-urgent-padding = 1
 
 ;label-empty = %index%
-label-empty =
+label-empty = %icon%
 label-empty-foreground = #928374
 label-empty-padding = 1
 
