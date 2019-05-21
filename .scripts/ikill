@@ -1,0 +1,5 @@
+#!/bin/sh
+pid="$(ps -ef | sed 1d | fzf --height=15 --reverse | awk '{print $2}')"
+if [ "$pid" ]; then
+  kill "$pid"
+fi

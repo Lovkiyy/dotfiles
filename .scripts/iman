@@ -1,0 +1,5 @@
+#!/bin/sh
+choice="$(man -k . | fzf --height=15 | awk '{print $1'} | rev | cut -c 4- | rev)"
+if [ $choice ];then
+  man $choice
+fi
