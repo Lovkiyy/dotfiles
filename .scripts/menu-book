@@ -1,6 +1,6 @@
 #!/bin/sh
 dir="$HOME/usr/doc/books"
-page=$(ls $dir | grep pdf | rofi -lines 13 -dmenu -i)
+page=$(ls $dir | grep pdf | dmenu-center -l 15 -i)
 
 if [ "${page}" ]; then
 zathura "$dir/$page"

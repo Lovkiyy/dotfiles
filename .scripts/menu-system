@@ -1,5 +1,5 @@
 #!/bin/sh
-choice=$(echo -n "suspend\nlock\npoweroff\nreboot" | rofi -dmenu) || exit 1
+choice=$(echo -n "suspend\nlock\npoweroff\nreboot" | dmenu-center) || exit 1
 if [ $choice = "suspend" ]; then
   sudo zzz
 elif [ $choice = "lock" ]; then

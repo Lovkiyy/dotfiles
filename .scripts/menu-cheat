@@ -1,6 +1,6 @@
 #!/bin/sh
 dir="$HOME/usr/doc/cheat"
-page=$(ls '*.pdf' $dir | grep pdf | rofi -dmenu -i)
+page=$(ls '*.pdf' $dir | grep pdf | dmenu -i)
 
 if [ $page ]; then
 zathura --mode=fullscreen "$dir/$page"

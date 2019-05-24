@@ -6,7 +6,7 @@ super + {r,m}
 super + w
   qutebrowser
 super + d
-  rofi -show run
+  dmenu_run
 
 # Music
 super + {p,comma,period}
@@ -28,13 +28,13 @@ XF86Audio{Play,Pause,Prev,Next}
 Print
   screen
 super + shift + p
-  rofi-system
+  menu-system
 super + shift + m
   bt-headset.sh
 super + shift + v
-  roficheat
+  menu-cheat
 super + b
-  rofibook
+  menu-book
 
 # Pokoy
 super + shift + b
