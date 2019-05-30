@@ -44,12 +44,17 @@ c.bindings.commands = {
             '<Ctrl-d>'        : 'fake-key <Delete>',
             '<Alt-d>'         : 'fake-key <Ctrl-Delete>',
             '<Ctrl-w>'        : 'fake-key <Ctrl-Backspace>',
+            # Default was that command was <Ctrl-e>
+            '<Ctrl-Shift-e>'  : 'open-editor',
             }
         }
 
 c.content.user_stylesheets = ["$HOME/.config/qutebrowser/solarized-dark-all.css"]
 # Toggle stylesheet
 config.bind(',n','config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-dark-all.css ""')
+config.unbind(';d')
+config.bind(';di','hint images download')
+config.bind(';dl','hint links download')
 
 # Fonts settings
 c.fonts.web.family.serif = "M+ 1p"

@@ -167,7 +167,8 @@ filetype plugin on
   "vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
   "map <leader><leader> <Esc>/<++><Enter>"_c4l
 
-" Language specific
+autocmd BufRead *mksh/* set filetype=sh
+" Filetype specific
 autocmd FileType html set breakindent
 autocmd FileType html set textwidth=80
 
@@ -176,3 +177,4 @@ autocmd FileType sh,bash,perl,python,ruby nnoremap <leader>ex :! chmod +x %<CR>
 autocmd FileType go nnoremap <leader>c :w<CR> :!go run %<CR>
 autocmd FileType go set noexpandtab shiftwidth=0
 autocmd FileType go nnoremap <leader>t :!go test -v<CR>
+
