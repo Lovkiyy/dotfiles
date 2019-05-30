@@ -1,0 +1,23 @@
+uc () {
+  echo -n "\u$@"
+}
+
+retrocat () {
+  cat $@ | beep -c -f 500 -D 40 -l 10
+}
+
+hist_search () {
+  fc -l 0 | fzf +s --tac --height 17 | cut -f 2-
+}
+
+ikill () {
+  pid="$(ps -ef | sed 1d | fzf --height=15 --reverse | awk '{print $2}')" && kill $pid
+}
+
+iman () {
+  choice="$(man -k . | fzf --height=15 | awk '{print $1}' | sed -E 's/\([0-9]\)//;s/,//')" && man $choice
+}
+
+inotes () {
+  choice="$(find -L $HOME/usr/notes -type f -not \( -path '*/.git/*' -o -path '*.jpg' -o -path '*.png' \) | fzf --height 8)" && $EDITOR $choice
+}
