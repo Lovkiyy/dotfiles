@@ -8,7 +8,7 @@ fi
 hsetroot -center $XDG_CONFIG_HOME/wall
 xgamma -bgamma 0.65
 sudo xbacklight 20
-xset dpms 0 0 240
+xset -b dpms 0 0 240
 setxkbmap "us,ru" ",winkeys" "grp:toggle,altwin:swap_lalt_lwin,caps:swapescape"
 xmodmap $XDG_CONFIG_HOME/X11/modmap
 xsetroot -cursor_name left_ptr
@@ -20,4 +20,3 @@ sxhkd &
 xbanish &
 
 exec bspwm
-#exec i3
