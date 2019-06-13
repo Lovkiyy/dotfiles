@@ -9,6 +9,8 @@ source $DIR/alias
 source $DIR/profile
 
 HISTFILE="$XDG_DATA_HOME/mksh/history"
+appendpath "$HOME/bin"
+export PATH
 
 # Launch X on tty1 after login
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
