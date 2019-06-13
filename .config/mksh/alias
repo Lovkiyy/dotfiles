@@ -6,27 +6,26 @@ alias cat=bat
 alias mon=gotop
 
 alias ex=exercism
-alias ka=killall
-alias own="sudo chown -R $USER"
-alias wttr="curl -s wttr.in"
+alias me=mega-exec
 alias ce=config-edit
-alias gi="grep -i"
-alias _=sudo
+alias ns=inotes
+alias ka=killall
+alias v=nvim
+alias r=ranger
 alias d=dict
+alias gi="grep -i"
+alias mk="mkdir -pv"
 alias xi="sudo xbps-install"
 alias xr="sudo xbps-remove"
 alias xq="xbps-query"
-alias ns="inotes"
 alias tor="transmission-daemon"
+alias own="sudo chown -R $USER"
+alias wttr="curl -s wttr.in"
 alias ansicat="iconv -f CP437"
 alias chill="mpv 'https://www.youtube.com/watch?v=hHW1oY26kxQ' && disown"
-alias andr="sudo simple-mtpfs --device 1 -o allow_other /media"
-
-alias v=nvim
-alias r=ranger
-alias mk="mkdir -pv"
-alias dush=ncdu
 alias mpweb="mpv av://v4l2:/dev/video0"
+alias andr="sudo simple-mtpfs --device 1 -o allow_other /media"
+alias lsbk="sudo lsblk -o NAME,MOUNTPOINT,SIZE,FSUSED,FSTYPE,PTTYPE,RM"
 
 # Config stuff
 alias ap="nvim $HOME/usr/notes/handbook/apps.md"
@@ -54,5 +53,5 @@ alias la="ls -lAh"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias calcurse="calcurse -D ~/usr/notes/calcurse"
 
-alias ...="../.."
-alias ....="../../.."
+alias ...="cd ../.."
+alias ....="cd ../../.."
