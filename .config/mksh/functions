@@ -19,5 +19,9 @@ iman () {
 }
 
 inotes () {
-  choice="$(find -L $HOME/usr/notes -type f -not \( -path '*/.git/*' -o -path '*.jpg' -o -path '*.png' \) | fzf --height 8)" && $EDITOR $choice
+  choice="$(find -L $HOME/usr/notes -type f -not \( -path '*/.git/*' -o -path '*.jpg' -o -path '*.png' \) | fzf --height 8)" && $EDITOR "$choice"
+}
+
+passgen () {
+  sed 15q /dev/urandom | tr -dc 'a-zA-Z0-9-!?:;<>[]{}.,/\@#$%^&*()_+~' | fold -w ${1:-20} | sed 1q
 }
