@@ -1,13 +1,14 @@
 # TODO: history handling(something like !!);
 
+# Launch fasd
+eval "$(fasd --init posix-alias posix-hook)"
+
 DIR="/home/archie/.config/mksh"
 source $DIR/functions
 source $DIR/alias
 source $DIR/profile
 
 HISTFILE="$XDG_DATA_HOME/mksh/history"
-# Launch fasd
-eval "$(fasd --init posix-alias posix-hook)"
 
 # Launch X on tty1 after login
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then

@@ -14,7 +14,7 @@ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export LESSHISTFILE=-
 export _FASD_DATA="$XDG_DATA_HOME/fasd"
-export PASSWORD_STORE_DIR="$HOME/src/backup/pass"
+export PASSWORD_STORE_DIR="$HOME/usr/pass"
 export PASSWORD_CLIP_TIME="120"
 
 # Less config

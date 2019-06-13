@@ -69,6 +69,7 @@
 " Vim plug
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vimwiki/vimwiki'
+Plug 'AndrewRadev/id3.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
@@ -172,7 +173,7 @@ autocmd BufRead *mksh/* set filetype=sh
 autocmd FileType html set breakindent
 autocmd FileType html set textwidth=80
 
-autocmd FileType sh,bash,perl,python,ruby nnoremap <leader>ex :! chmod +x %<CR>
+autocmd FileType sh,bash,perl,python,ruby nnoremap <leader>ex :!chmod +x %<CR>
 
 autocmd FileType go nnoremap <leader>c :w<CR> :!go run %<CR>
 autocmd FileType go set noexpandtab shiftwidth=0

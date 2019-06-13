@@ -1,9 +1,9 @@
-#!/bin/mksh
+#!/bin/sh
 C=0
-while [ C -lt 255 ]; do
+while [ $C -lt 255 ]; do
     tput setab $C
     echo -n "$C "
-    C=$(expr $C + 1)
+    C=$((C + 1))
 done
 tput sgr0
 echo

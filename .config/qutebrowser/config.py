@@ -20,7 +20,7 @@ c.editor.command = ['st', '-e', 'nvim', '{}']
 
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'aw': 'https://wiki.archlinux.org/?search={}',
-    'i': 'https://duckduckgo.com/?ia=images&iax=images&q={}',
+    'i': 'https://yandex.ru/images/search?text={}',
     'w': 'https://en.wikipedia.org/w/index.php?search={}',
     'wru': 'https://ru.wikipedia.org/w/index.php?search={}',
     'gh': 'https://github.com/search?q={}',
@@ -154,7 +154,7 @@ c.colors.statusbar.progress.bg = solarized['base1']
 c.colors.statusbar.url.error.fg = solarized['red']
 c.colors.statusbar.url.fg = solarized['base1']
 c.colors.statusbar.url.hover.fg = solarized['base2']
-c.colors.statusbar.url.success.http.fg = solarized['base1']
+c.colors.statusbar.url.success.http.fg = solarized['magenta']
 c.colors.statusbar.url.success.https.fg = solarized['base1']
 c.colors.statusbar.url.warn.fg = solarized['yellow']
 c.colors.tabs.even.bg = solarized['base02']
