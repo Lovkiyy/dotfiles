@@ -25,3 +25,13 @@ inotes () {
 passgen () {
   sed 15q /dev/urandom | tr -dc 'a-zA-Z0-9-!?:;<>[]{}.,/\@#$%^&*()_+~' | fold -w ${1:-20} | sed 1q
 }
+
+appendpath () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+
