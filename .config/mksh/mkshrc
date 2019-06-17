@@ -3,12 +3,13 @@
 # Launch fasd
 eval "$(fasd --init posix-alias posix-hook)"
 
-DIR="/home/archie/.config/mksh"
+DIR="$HOME/.config/mksh"
 source $DIR/functions
 source $DIR/alias
 source $DIR/profile
 
 HISTFILE="$XDG_DATA_HOME/mksh/history"
+HISTSIZE=10000
 appendpath "$HOME/bin"
 export PATH
 
