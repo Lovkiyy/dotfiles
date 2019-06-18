@@ -15,7 +15,7 @@ ikill () {
 }
 
 iman () {
-  choice="$(man -k . | fzf --height=15 | awk '{print $1}' | sed -E 's/\([0-9]\)//;s/,//')" && man $choice
+  choice="$(man -k . 2> /dev/null | fzf --height=15 | awk '{print $1}' | sed -E 's/\([0-9]\)//;s/,//')" && man $choice
 }
 
 inotes () {
