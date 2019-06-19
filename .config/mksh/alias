@@ -10,6 +10,7 @@ alias me=mega-exec
 alias ce=config-edit
 alias ns=inotes
 alias ka=killall
+alias yt=youtube-viewer
 alias v=nvim
 alias r=ranger
 alias d=dict
@@ -24,17 +25,9 @@ alias wttr="curl -s wttr.in"
 alias ansicat="iconv -f CP437"
 alias chill="mpv 'https://www.youtube.com/watch?v=hHW1oY26kxQ' && disown"
 alias mpweb="mpv av://v4l2:/dev/video0"
+alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 alias andr="sudo simple-mtpfs --device 1 -o allow_other /media"
 alias lsbk="sudo lsblk -o NAME,MOUNTPOINT,SIZE,FSUSED,FSTYPE,PTTYPE,RM"
-
-# Config stuff
-alias ap="nvim $HOME/usr/notes/handbook/apps.md"
-
-alias cfb="nvim $XDG_CONFIG_HOME/bspwm/bspwmrc"
-alias cfp="nvim $XDG_CONFIG_HOME/polybar/config"
-alias cfv="nvim $XDG_CONFIG_HOME/nvim/init.vim"
-alias cfq="nvim $XDG_CONFIG_HOME/qutebrowser/config.py"
-alias cfs="nvim $XDG_CONFIG_HOME/sxhkd/sxhkdrc"
 
 # Git aliases
 alias ga="git add"
