@@ -48,7 +48,7 @@ _prompt_job () {
 }
 
 _prompt_host () {
-  if [ "$USER" != "archie" ] || [ -n "$SSH_CLIENT" ];then
+  if [ "$USER" != "$DEFAULT_USER" ] || [ -n "$SSH_CLIENT" ];then
     _prompt_segment 0
     echo -n " ${USER}@$(hostname) "
   fi
