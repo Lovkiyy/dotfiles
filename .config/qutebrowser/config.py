@@ -1,5 +1,8 @@
 # Cache around 30 megs
 c.content.cache.size = 30000000
+c.content.webgl = False
+c.content.notifications = False
+c.content.geolocation = False
 
 c.downloads.location.directory = "$HOME/tmp"
 c.downloads.remove_finished = 60
