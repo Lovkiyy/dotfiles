@@ -3,7 +3,7 @@ choice=$(echo -n "suspend\nlock\npoweroff\nreboot" | dmenu-center) || exit 1
 if [ $choice = "suspend" ]; then
   sudo zzz
 elif [ $choice = "lock" ]; then
-  xset dpms force off && slock
+  physlock -dsm
 elif [ $choice = "poweroff" ]; then
   sudo poweroff
 elif [ $choice = "reboot" ]; then
