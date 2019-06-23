@@ -14,7 +14,7 @@ super + {p,comma,period}
 
 # Volume
 super + {minus,equal}
-  pulsemixer --change-volume {-5,+5}
+  amixer sset PCM {5%-,5%+}
 
 # Brightness
 super + shift + {minus,equal}
