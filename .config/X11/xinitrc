@@ -13,6 +13,8 @@ $XDG_CONFIG_HOME/X11/keys
 xsetroot -cursor_name left_ptr
 xinput disable 'SynPS/2 Synaptics TouchPad'
 
+physlock -sm &
+
 redshift &
 pokoy -r &
 sxhkd &
