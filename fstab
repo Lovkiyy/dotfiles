@@ -1,0 +1,9 @@
+#
+# See fstab(5).
+#
+# <file system>					<dir>			<type>	<options>			<dump>	<pass>
+tmpfs						/tmp			tmpfs	defaults,nosuid,nodev  		 0       0
+tmpfs						/home/archie/tmp	tmpfs	defaults,nosuid,nodev		 0	 0
+UUID=43f7e869-21d6-42d6-87c4-5541326dd151	/			ext4 	defaults,noatime,discard	 0	 1
+/var/cache/swap					none			swap	sw			 	 0	 0
+UUID=76f69a7d-9e11-4a40-af81-5bd0f058d9b7	/media			ext4	defaults,nosuid,nodev,noauto	 0	 0
