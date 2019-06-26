@@ -4,7 +4,7 @@ file=$(mktemp /tmp/vtype.XXXXX)
 xsel -b -o > $file
 
 # For some reason i can't fold file in place
-change=$(fold -w 125 -s $file)
+change=$(fold -w 72 -s $file)
 echo "$change" > $file
 sed -i "s/—/-/;s/—/-/;s/…/.../;s/’/\'/;s/–/-/;s/–/-/;s/’/\'/;s/’/\'/;s/‘/\'/;s/”/\"/;s/“/\"/;s/‘/\'/;s/’/\'/;s/–/-/;s/^[ \t]*//;s/[ \t]*$//g" "$file"
 
