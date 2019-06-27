@@ -63,7 +63,7 @@ _prompt_error () {
 
 _prompt_pwrln=" $(tput sgr0)$(tput setaf 4)$(tput sgr0)"
 _prompt_bgr=4
-DEFAULT_USER=archie
+DEFAULT_USER=sleich
 
 if [ "$USER" = 'root' ]; then
   _prompt_bgr=9
