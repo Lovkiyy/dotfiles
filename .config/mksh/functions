@@ -19,7 +19,7 @@ iman () {
 }
 
 inotes () {
-  choice="$(find -L $HOME/usr/notes -type f -not \( -path '*/.git/*' -o -path '*.jpg' -o -path '*.png' \) | fzf --height 8)" && $EDITOR "$choice"
+  choice="$(find -L $HOME/usr/notes -type f -not \( -path '*/.git/*' -o -path '*.jpg' -o -path '*.png' -o -path '*.csv' \) | fzf --height 8)" && $EDITOR "$choice"
 }
 
 passgen () {
