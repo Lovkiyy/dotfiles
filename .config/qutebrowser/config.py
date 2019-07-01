@@ -1,8 +1,11 @@
 # Cache around 30 megs
 c.content.cache.size = 30000000
 c.content.webgl = False
-c.content.notifications = False
 c.content.geolocation = False
+c.content.autoplay = False
+c.content.canvas_reading = False
+# It is the default but i want to make it explicit
+c.content.javascript.can_access_clipboard = False
 
 c.downloads.location.directory = "$HOME/tmp"
 c.downloads.remove_finished = 60
@@ -55,6 +58,7 @@ config.bind(',n','config-cycle content.user_stylesheets ~/.config/qutebrowser/so
 config.unbind(';d')
 config.bind(';di','hint images download')
 config.bind(';dl','hint links download')
+config.bind('gd','download --mhtml')
 
 # Fonts settings
 c.fonts.web.family.serif = "M+ 1p"
