@@ -14,6 +14,7 @@ export LESSHISTFILE=-
 export _FASD_DATA="$XDG_DATA_HOME/fasd"
 export PASSWORD_STORE_DIR="$HOME/usr/pass"
 export PASSWORD_CLIP_TIME="120"
+export PYTHONSTARTUP="$HOME/var/startup.py"
 
 # Less config
 export LESS="-R -M"
