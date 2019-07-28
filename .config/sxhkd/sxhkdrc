@@ -12,6 +12,9 @@ super + d
 super + {p,comma,period}
   cmus-remote {--pause,--prev,--next}
 
+super + shift + {comma,period}
+  cmus-remote --seek {-10,+10}
+
 # Volume
 super + {minus,equal}
   amixer sset PCM {5%-,5%+}
