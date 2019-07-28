@@ -26,76 +26,36 @@ bind '^L'='clear-screen'
 ##############
 # Shows background jobs, exit codes, current directory($HOME as ~),
 # user@hostname on ssh connection and if user is not $DEFAULT_USER
-# Looks like agnoster theme, requires powerline. POSIX-compatible
-# TODO: git status
-# I had to prefix escape characters with Ctrl-A to not count them
-# because command-line editors wrap line too fast
+# POSIX-compatible. TODO: git status
+DEFAULT_USER=sleich
 
 _prompt_dir () {
-  _prompt_segment $_prompt_bgr 0
   local dir=${PWD#$HOME}
   case $PWD in
-    ${HOME}*) echo -n ' ~'"$dir" ;;
+    ${HOME}*) echo -n '~'"$dir" ;;
     *) echo -n " $PWD" ;;
   esac
 }
 
 _prompt_job () {
   if [ "$(jobs)" ]; then
-    _prompt_segment 0 2
-    echo -n "#$(jobs | wc -l)"
+    echo -n "#$(jobs | wc -l) "
   fi
 }
 
 _prompt_host () {
   if [ "$USER" != "$DEFAULT_USER" ] || [ -n "$SSH_CLIENT" ];then
-    _prompt_segment 0
-    echo -n " ${USER}@$(hostname) "
+    echo -n "${USER}@$(hostname) "
   fi
 }
 
 _prompt_error () {
   if [ $? -ne 0 ];then
-    _prompt_segment 1
-    echo -n "!${?}"
+    echo -n "!${?} "
   fi
 }
 
-_prompt_pwrln=" $(tput sgr0)$(tput setaf 4)$(tput sgr0)"
-_prompt_bgr=4
-DEFAULT_USER=sleich
-
-if [ "$USER" = 'root' ]; then
-  _prompt_bgr=9
-  DEFAULT_USER=root
-  _prompt_pwrln=" $(tput sgr0)$(tput setaf 9)$(tput sgr0)"
-fi
-
-if [ -z "$DISPLAY" ];then
-  _prompt_segment () {
-  if [ $# -gt 1 ];then
-    echo -n "$(tput setab $1)$(tput setaf $2)"
-  else
-    echo -n "$(tput setab $1)"
-  fi
-  }
-  PS1="\$(_prompt_error;_prompt_job;_prompt_host;_prompt_dir) $(tput sgr0) "
-else
-  _prompt_segment () {
-    if [ "$PROMPT_FIRST" ];then
-      echo -n "$(tput rev)$(tput setaf $1)$(tput sgr0)"
-    fi
-
-    if [ $# -gt 1 ];then
-      echo -n "$(tput setab $1)$(tput setaf $2)"
-    else
-      echo -n "$(tput setab $1)"
-    fi
-    PROMPT_FIRST=1
-  }
-  PS1="\$(_prompt_error;_prompt_job;_prompt_host;_prompt_dir)${_prompt_pwrln} "
-fi
-
+PS1="[\$(_prompt_error)\$(_prompt_job)$(_prompt_host)\$(_prompt_dir)]$ "
 #############
 # toggle built-in aliases and utilities, and aliases and functions from mkshrc
 function enable {
