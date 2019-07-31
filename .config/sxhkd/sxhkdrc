@@ -17,7 +17,7 @@ super + shift + {comma,period}
 
 # Volume
 super + {minus,equal}
-  amixer sset PCM {5%-,5%+}
+  ponymix {decrease,increase} 5
 
 # Brightness
 super + shift + {minus,equal}
