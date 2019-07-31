@@ -1,0 +1,49 @@
+#!/bin/sh
+
+screen_blank () {
+  xset dpms force off
+}
+
+set_wallpaper () {
+  hsetroot -tile "$1"
+}
+
+toggle_touchpad () {
+  name="SynPS/2 Synaptics TouchPad"
+  state=$(xinput list-props "$name" | sed '2q;d' | awk '{print $4}')
+  if [ $state = 0 ];then
+    xinput enable "$name"
+    echo "Enabled touchpad"
+  else
+    xinput disable "$name"
+    echo "Disabled touchpad"
+  fi
+}
+
+toggle_dpms () {
+  # State is either 'Enabled' or 'Disabled'
+  state=$(xset q | grep 'DPMS' | tail -1 | awk '{print $3}')
+  if [ $state = 'Enabled' ];then
+    xset -dpms
+    echo "Disabled DPMS"
+  else
+    xset dpms
+    echo "Enabled DPMS"
+  fi
+}
+
+# Assumes the mixer is PCM and Left and Right volume levels are the same,
+# other values for amixer are default. Doesn't mute channel, just sets volume to 0
+toggle_mute () {
+  ponymix toggle
+}
+
+
+case "$1" in
+  blank) screen_blank ;;
+  wall) set_wallpaper $2 ;;
+  touch) toggle_touchpad ;;
+  mute) toggle_mute ;;
+  dpms) toggle_dpms ;;
+  *) echo "$1 - unknown function"
+esac
