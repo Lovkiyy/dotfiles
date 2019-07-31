@@ -15,6 +15,7 @@ xinput disable 'SynPS/2 Synaptics TouchPad'
 
 physlock -sm &
 
+blueman-applet &
 redshift &
 pokoy -r &
 sxhkd &
