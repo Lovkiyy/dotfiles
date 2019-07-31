@@ -4,6 +4,7 @@ c.content.webgl = False
 c.content.geolocation = False
 c.content.autoplay = False
 c.content.canvas_reading = False
+c.content.notifications = False
 # It is the default but i want to make it explicit
 c.content.javascript.can_access_clipboard = False
 
