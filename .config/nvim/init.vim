@@ -62,7 +62,7 @@
         set listchars+=trail:•
         set listchars+=nbsp:•
 
-" Automatically delete all trailing whitespace on save
+" Automatically delete all trailing whitespace on save. TODO: retain cursor position
         autocmd BufWritePre * %s/\s\+$//e
 
 
