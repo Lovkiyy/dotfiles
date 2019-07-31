@@ -1,4 +1,4 @@
-set output_plugin=alsa
+set output_plugin=pulse
 colorscheme gruvbox-alt
 bind -f common L shell st -e lyrics.sh
 bind -f common ^L push shell st -e lyrics.sh
