@@ -56,6 +56,7 @@ c.bindings.commands = {
 c.content.user_stylesheets = ["$XDG_CONFIG_HOME/qutebrowser/solarized-dark-all.css"]
 # Toggle stylesheet
 config.bind(',n','config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-dark-all.css ""')
+# Download bindings
 config.unbind(';d')
 config.bind(';di','hint images download')
 config.bind(';dl','hint links download')
