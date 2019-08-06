@@ -62,10 +62,6 @@
         set listchars+=trail:•
         set listchars+=nbsp:•
 
-" Automatically delete all trailing whitespace on save. TODO: retain cursor position
-        autocmd BufWritePre * %s/\s\+$//e
-
-
 " Vim plug
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vimwiki/vimwiki'
@@ -77,9 +73,6 @@ Plug 'junegunn/fzf'
 "Plug 'junegunn/goyo.vim'
 call plug#end()
 filetype plugin on
-
-" Disable autocomment on newline
-        autocmd FileType * setlocal formatoptions-=cro
 
 " Plugin settings
 
@@ -133,21 +126,17 @@ filetype plugin on
 
 " Keyboard Mappings
 
-" Copy selected text to system clipboard
+  " Copy selected text to system clipboard
   vnoremap <C-c> "+y
   map <C-p> "+P
 
   " emacs movement keybindings in insert mode
   imap <C-a> <C-o>0
   imap <C-e> <C-o>$
-  map <C-e> $
-  "map <C-a> 0
 
   " sane movement with wrap turned on
   nnoremap j gj
   nnoremap k gk
-  vnoremap j gj
-  vnoremap k gk
 
   " Better split movement
   nnoremap <C-h> <C-w>h
@@ -157,9 +146,7 @@ filetype plugin on
 
   " Moving characters
   nnoremap L xp
-  nnoremap H xP
-
-  nnoremap <leader>w :w<CR>
+  nnoremap H xhP
 
   nnoremap <leader>tn :tabnew<CR>
 
@@ -167,6 +154,12 @@ filetype plugin on
   "inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
   "vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
   "map <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" Disable autocomment on newline
+autocmd FileType * setlocal formatoptions-=cro
+
+" Automatically delete all trailing whitespace on save. TODO: retain cursor position
+autocmd BufWritePre * %s/\s\+$//e
 
 autocmd BufRead *mksh/* set filetype=sh
 " Filetype specific
