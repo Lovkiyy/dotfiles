@@ -1,8 +1,0 @@
-#!/bin/sh
-dir=/sys/class/power_supply
-bat0_charge=$(cat $dir/BAT0/capacity)
-bat0_status=$(cat $dir/BAT0/status)
-bat1_charge=$(cat $dir/BAT1/capacity)
-bat1_status=$(cat $dir/BAT1/status)
-
-echo "Main battery:\n  Charge: ${bat0_charge}%\n  Status: ${bat0_status}\nReplaceable battery:\n  Charge: ${bat1_charge}%\n  Status: ${bat1_status}"
