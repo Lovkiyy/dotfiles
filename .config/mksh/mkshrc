@@ -8,9 +8,18 @@ source $DIR/functions
 source $DIR/alias
 source $DIR/profile
 
+# XDG_RUNTIME_DIR is required by some applications
+#
+if [ ! -d "${XDG_RUNTIME_DIR}" ]; then
+  sudo mkdir "${XDG_RUNTIME_DIR}"
+  sudo chown -R "${USER}" "${XDG_RUNTIME_DIR}"
+  chmod 0700 "${XDG_RUNTIME_DIR}"
+fi
+
 HISTFILE="$XDG_DATA_HOME/mksh/history"
 HISTSIZE=10000
 appendpath "$HOME/bin"
+appendpath "/var/lib/flatpak/exports/bin"
 export PATH
 
 # Launch X on tty1 after login
@@ -33,7 +42,7 @@ _prompt_dir () {
   local dir=${PWD#$HOME}
   case $PWD in
     ${HOME}*) echo -n '~'"$dir" ;;
-    *) echo -n " $PWD" ;;
+    *) echo -n "$PWD" ;;
   esac
 }
 

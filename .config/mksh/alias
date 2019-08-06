@@ -5,10 +5,10 @@ alias xpaste='xsel -b -o -l /dev/null'
 alias cat=bat
 alias mon=gotop
 
+alias ce=config_edit
+alias ns=inotes
 alias ex=exercism
 alias me=mega-exec
-alias ce=config-edit
-alias ns=inotes
 alias ka=killall
 alias yt=youtube-viewer
 alias v=nvim
@@ -17,13 +17,12 @@ alias d=dict
 alias gi="grep -i"
 alias mk="mkdir -pv"
 alias xi="sudo xbps-install"
-alias xr="sudo xbps-remove"
+alias xr="sudo xbps-remove -R"
 alias xq="xbps-query"
 alias tor="transmission-daemon"
 alias own="sudo chown -R $USER"
 alias wttr="curl -s wttr.in"
 alias ansicat="iconv -f CP437"
-alias chill="mpv 'https://www.youtube.com/watch?v=hHW1oY26kxQ' && disown"
 alias mpweb="mpv av://v4l2:/dev/video0"
 alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 alias andr="sudo simple-mtpfs --device 1 -o allow_other /media"
@@ -37,15 +36,9 @@ alias gd="git diff"
 alias gpl="git pull"
 alias gps="git push"
 
-# Go aliases
-alias gor="go run"
-
 # Defaults
-alias ls="ls -hN --color=tty --group-directories-first"
+alias ls="ls -hNF --color=tty --group-directories-first"
 alias la="ls -lAh"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias calcurse="calcurse -D ~/usr/notes/calcurse"
 alias dmesg="sudo dmesg --ctime --color=always"
-
-alias ...="cd ../.."
-alias ....="cd ../../.."

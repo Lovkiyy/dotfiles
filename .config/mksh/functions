@@ -42,3 +42,47 @@ run () {
     $@
   done
 }
+
+testmic () {
+  arecord -vvv -f dat /dev/null
+}
+
+fix () {
+  reset
+  stty sane
+  tput rs1
+  clear
+  echo -e "\e[0m"
+}
+
+colors () {
+  C=0
+  while [ $C -lt 255 ]; do
+      tput setab $C
+      echo -n "$C "
+      C=$((C + 1))
+  done
+  tput sgr0
+  echo
+}
+
+config_edit () {
+  dir=${XDG_CONFIG_HOME:-$HOME/.config}
+  cd $dir
+  file="$(find -L ./ -type f | cut -c 3- | fzf --height=15)" && nvim "$dir/$file"
+}
+
+# cd .. $1 times; else - cd ..
+.. () {
+    if [ -n "$1" ]; then
+        NUM=$(grep -o '[0-9]\+' <<< "$1")
+        START=0
+        while [ "$START" -lt "$NUM" ]
+        do
+            \cd ..
+            START=$((START+1))
+        done
+    else
+        \cd ..
+    fi
+}
