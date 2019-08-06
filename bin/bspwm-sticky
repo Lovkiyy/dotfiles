@@ -1,0 +1,12 @@
+#!/bin/sh
+if bspc query -N focused.sticky > /dev/null;then
+  bspc node focused -g hidden
+elif bspc query -N any.hidden.sticky > /dev/null;then
+  bspc node any.sticky -g hidden
+  bspc node any.sticky -f
+elif bspc query -d -N any.sticky > /dev/null;then
+  bspc node any.sticky -f
+else
+  bspc node -t floating
+  bspc node -g sticky
+fi
