@@ -1,11 +1,11 @@
 #!/bin/sh
 choice=$(echo -n "suspend\nlock\npoweroff\nreboot" | dmenu-center) || exit 1
-if [ $choice = "suspend" ]; then
+if [ $choice = "suspend" ];then
   sudo zzz
-elif [ $choice = "lock" ]; then
+elif [ $choice = "lock" ];then
   physlock -dsm
-elif [ $choice = "poweroff" ]; then
+elif [ $choice = "poweroff" ];then
   sudo poweroff
-elif [ $choice = "reboot" ]; then
+elif [ $choice = "reboot" ];then
   sudo reboot
 fi
