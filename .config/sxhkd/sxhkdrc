@@ -29,7 +29,7 @@ XF86Audio{Play,Pause,Prev,Next}
 
 # Scripts
 Print
-  screen
+  ctl screenshot
 super + shift + p
   menu-system
 super + shift + m
@@ -40,6 +40,8 @@ super + v
   start-vm
 super + b
   menu-book
+super + grave
+  dmenu-unicode
 
 # Pokoy
 super + shift + b
@@ -154,3 +156,11 @@ mod2 + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Sticky window
+super + s
+  bspwm-sticky
+
+super + shift + s
+  bspc node focused.sticky -g sticky;\
+  bspc node -t tiled
