@@ -34,33 +34,33 @@ lightaqua = #8ec07c
 orange = #d65d0e
 lightorange = #fe8019
 
-[bar/archie]
+[bar/main]
 width = 100%
 height = 15
 fixed-center = true
-monitor = eDP-1
+monitor = ${env:MONITOR:eDP-1}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 padding-left = 0
-padding-right = 1
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Terminus:size=12:antialias=false;1
-font-1 = UbuntuMono Nerd Font:pixelsize=12;2
-font-2 = Siji;3
+font-1 = Siji;3
+font-2 = M+ 1p:pixelsize=10:style=bold;4
 
 modules-left = bspwm
-modules-right = backlight battery-comb date
+modules-right = cmus backlight pulseaudio battery-comb date updates
 modules-center =
 
 tray-position = none
 ;tray-padding = 2
 
-[module/powerline]
+[module/style]
 color = ${colors.purple}
 
 format-padding = 2
@@ -76,11 +76,13 @@ type = internal/backlight
 card = intel_backlight
 enable-scroll = false
 format = <label>
-label = "%{T3}%{T-} %percentage%%"
+label = " %percentage%%"
 
+; color of this module is lighter because
+; it seems pale on yellow background
 format-foreground = #ffffff
 color = ${colors.yellow}
-inherit = module/powerline
+inherit = module/style
 
 [module/date]
 type = internal/date
@@ -92,9 +94,9 @@ date-alt = "%Y-%m-%d"
 time = "%H:%M"
 time-alt = "%H:%M:%S"
 
-label = "%{T3}%{T-} %date% - %time%"
+label = " %date% - %time%"
 color = ${colors.red}
-inherit = module/powerline
+inherit = module/style
 
 [module/battery-comb]
 type = custom/script
@@ -103,16 +105,38 @@ tail = true
 interval = 20
 
 color = ${colors.purple}
-inherit = module/powerline
+inherit = module/style
 
-[module/void-update]
+[module/cmus]
+type = custom/script
+exec = $HOME/src/scripts/music.sh
+interval = 5
+
+label = " %output%"
+
+inherit = module/style
+color = ${colors.blue}
+
+[module/updates]
 type = custom/script
 exec = $HOME/src/scripts/updates.sh
-format-prefix = ""
-interval = 40
+label = "%output%"
+interval = 20
 
-inherit = module/powerline
-color = ${root.background}
+inherit = module/style
+color = ${colors.blue}
+
+; This module cannot inherit module/style
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-muted = " muted"
+label-volume = " %percentage%%"
+
+label-volume-background = ${colors.aqua}
+label-volume-padding = 2
+
+label-muted-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -120,12 +144,12 @@ type = internal/i3
 enable-click = false
 enable-scroll = false
 
-ws-icon-0 = 1;%{T3}%{T-} web
-ws-icon-1 = 2;%{T3}%{T-} term
-ws-icon-2 = 3;%{T3}%{T-} dev
-ws-icon-3 = 4;%{T3}%{T-} media
-ws-icon-4 = 5;%{T3}%{T-} music
-ws-icon-5 = 6;%{T3}%{T-} etc
+ws-icon-0 = 1; web
+ws-icon-1 = 2; term
+ws-icon-2 = 3; dev
+ws-icon-3 = 4; media
+ws-icon-4 = 5; music
+ws-icon-5 = 6; etc
 ws-icon-6 = 7;7
 ws-icon-7 = 8;8
 ws-icon-8 = 9;9
@@ -191,12 +215,12 @@ label-empty = %icon%
 label-empty-foreground = #928374
 label-empty-padding = 1
 
-ws-icon-0 = 1;%{T3}%{T-} web
-ws-icon-1 = 2;%{T3}%{T-} term
-ws-icon-2 = 3;%{T3}%{T-} dev
-ws-icon-3 = 4;%{T3}%{T-} media
-ws-icon-4 = 5;%{T3}%{T-} music
-ws-icon-5 = 6;%{T3}%{T-} etc
+ws-icon-0 = 1; web
+ws-icon-1 = 2; term
+ws-icon-2 = 3; dev
+ws-icon-3 = 4; media
+ws-icon-4 = 5; music
+ws-icon-5 = 6; etc
 ws-icon-6 = 7;7
 ws-icon-7 = 8;8
 ws-icon-8 = 9;9
