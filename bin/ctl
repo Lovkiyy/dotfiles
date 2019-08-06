@@ -8,6 +8,20 @@ set_wallpaper () {
   hsetroot -tile "$1"
 }
 
+screenshot () {
+  ffmpeg -f x11grab -video_size 1600x900 -i $DISPLAY -vframes 1 $HOME/usr/img/$(echo $(date "+%m%d%H%M%S"))screen.png
+}
+
+battery_status () {
+  dir=/sys/class/power_supply
+  bat0_charge=$(cat $dir/BAT0/capacity)
+  bat0_status=$(cat $dir/BAT0/status)
+  bat1_charge=$(cat $dir/BAT1/capacity)
+  bat1_status=$(cat $dir/BAT1/status)
+
+  echo "Main battery:\n  Charge: ${bat0_charge}%\n  Status: ${bat0_status}\nReplaceable battery:\n  Charge: ${bat1_charge}%\n  Status: ${bat1_status}"
+}
+
 toggle_touchpad () {
   name="SynPS/2 Synaptics TouchPad"
   state=$(xinput list-props "$name" | sed '2q;d' | awk '{print $4}')
@@ -42,8 +56,10 @@ toggle_mute () {
 case "$1" in
   blank) screen_blank ;;
   wall) set_wallpaper $2 ;;
-  touch) toggle_touchpad ;;
+  touch*) toggle_touchpad ;;
   mute) toggle_mute ;;
   dpms) toggle_dpms ;;
+  batt*) battery_status;;
+  screen*) screenshot ;;
   *) echo "$1 - unknown function"
 esac
