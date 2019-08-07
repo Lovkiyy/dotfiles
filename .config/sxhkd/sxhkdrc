@@ -1,6 +1,6 @@
 # Apps
-super + Return
-  st
+super + {_,shift} + Return
+  {st,samedir}
 super + {r,m}
   st -e {ranger,cmus}
 super + w
