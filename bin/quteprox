@@ -1,3 +1,0 @@
-#!/bin/sh
-. $XDG_CONFIG_HOME/qutebrowser/prox
-qutebrowser ':set downloads.location.directory "$HOME/tmp"' --temp-basedir
