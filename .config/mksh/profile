@@ -15,6 +15,7 @@ export LESSHISTFILE=-
 export _FASD_DATA="$XDG_DATA_HOME/fasd"
 export PASSWORD_STORE_DIR="$HOME/usr/pass"
 export PASSWORD_CLIP_TIME="120"
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Less config
 export LESS="-R -M"
