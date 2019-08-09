@@ -49,7 +49,7 @@ toggle_dpms () {
 # Assumes the mixer is PCM and Left and Right volume levels are the same,
 # other values for amixer are default. Doesn't mute channel, just sets volume to 0
 toggle_mute () {
-  ponymix toggle
+  pulsemixer --toggle-mute
 }
 
 

@@ -17,7 +17,7 @@ super + shift + {comma,period}
 
 # Volume
 super + {minus,equal}
-  ponymix {decrease,increase} 5
+  pulsemixer --change-volume {-,+}5
 
 # Brightness
 super + shift + {minus,equal}
