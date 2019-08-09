@@ -69,19 +69,19 @@ config.bind('gd','download --mhtml')
 
 # Fonts settings
 c.fonts.web.family.serif = "M+ 1p"
-c.fonts.monospace = "UbuntuMono Nerd Font"
-c.fonts.completion.category = "bold 13pt monospace"
-c.fonts.completion.entry = "13pt monospace"
-c.fonts.debug_console = "13pt monospace"
-c.fonts.downloads = "13pt monospace"
-c.fonts.hints = "13pt monospace"
-c.fonts.keyhint = "13pt monospace"
-c.fonts.messages.error = "13pt monospace"
-c.fonts.messages.info = "13pt monospace"
-c.fonts.messages.warning = "13pt monospace"
-c.fonts.prompts = "13pt monospace"
-c.fonts.statusbar = "13pt monospace"
-c.fonts.tabs = "13pt monospace"
+c.fonts.monospace = "Source Code Pro"
+c.fonts.completion.category = "bold 10pt monospace"
+c.fonts.completion.entry = "10pt monospace"
+c.fonts.debug_console = "10pt monospace"
+c.fonts.downloads = "10pt monospace"
+c.fonts.hints = "10pt monospace"
+c.fonts.keyhint = "10pt monospace"
+c.fonts.messages.error = "10pt monospace"
+c.fonts.messages.info = "10pt monospace"
+c.fonts.messages.warning = "10pt monospace"
+c.fonts.prompts = "10pt monospace"
+c.fonts.statusbar = "10pt monospace"
+c.fonts.tabs = "10pt monospace"
 
 # i am still waiting for it
 #config.set('content.user_stylesheets', [], '*://github.com')
