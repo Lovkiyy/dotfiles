@@ -59,7 +59,7 @@ c.content.user_stylesheets = ["$XDG_CONFIG_HOME/qutebrowser/solarized-dark-all.c
 config.bind(',n','config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-dark-all.css ""')
 
 # Toggle socks proxy via tor
-config.bind(',t','config-cycle content.proxy system socks://localhost:9050')
+config.bind(',t','config-cycle content.proxy socks://localhost:9050 system')
 
 # Download bindings
 config.unbind(';d')
