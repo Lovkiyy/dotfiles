@@ -16,7 +16,7 @@
 ;
 ;==========================================================
 [colors]
-background = #282828
+background = #32302f
 foreground = #ebdbb2
 grey = #928374
 red = #cc241d
