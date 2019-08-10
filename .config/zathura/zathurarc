@@ -9,19 +9,19 @@ map i recolor
 
 # Colorscheme
 set font                        "Terminus 12"
-set default-bg                  "#282828" #00
+set default-bg                  "#1d2021" #00
 set default-fg                  "#ebdbb2" #01
 
 set statusbar-fg                "#ebdbb2" #04
-set statusbar-bg                "#282828" #01
+set statusbar-bg                "#1d2021" #01
 
-set inputbar-bg                 "#282828" #00 currently not used
+set inputbar-bg                 "#1d2021" #00 currently not used
 set inputbar-fg                 "#ebdbb2" #02
 
-set notification-error-bg       "#282828" #08
+set notification-error-bg       "#1d2021" #08
 set notification-error-fg       "#cc241d" #00
 
-set notification-warning-bg     "#282828" #08
+set notification-warning-bg     "#1d2021" #08
 set notification-warning-fg     "#d79921" #00
 
 set highlight-color             "#a89984" #0A
@@ -33,9 +33,9 @@ set completion-highlight-bg     "#87afaf" #0C
 set completion-bg               "#4e4e4e" #02
 set completion-fg               "#ebdbb2" #0C
 
-set notification-bg             "#282828" #0B
+set notification-bg             "#1d2021" #0B
 set notification-fg             "#458588" #00
 
-set recolor-lightcolor          "#282828" #00
+set recolor-lightcolor          "#1d2021" #00
 set recolor-darkcolor           "#ebdbb2" #06
 set recolor                     "true"
