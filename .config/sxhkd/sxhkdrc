@@ -17,7 +17,7 @@ super + shift + {comma,period}
 
 # Volume
 super + {minus,equal}
-  pulsemixer --change-volume {-,+}5
+  pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 # Brightness
 super + shift + {minus,equal}
@@ -28,10 +28,10 @@ XF86Audio{Play,Pause,Prev,Next}
   cmus-remote {--play,--pause,--prev,--next}
 
 XF86Audio{_,Mic}Mute
-  {pulsemixer --toggle-mute,pactl set-source-mute @DEFAULT_SOURCE@ toggle}
+  {pactl set-sink-mute @DEFAULT_SINK@ toggle,pactl set-source-mute @DEFAULT_SOURCE@ toggle}
 
 XF86Audio{Lower,Raise}Volume
-  pulsemixer --change-volume {-,+}5
+  pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 XF86MonBrightness{Down,Up}
   doas xbacklight {-,+}5
