@@ -1,3 +1,3 @@
 set output_plugin=pulse
-colorscheme gruvbox-alt
+colorscheme gruvbox
 bind -f common L shell st -e clyrics -c
