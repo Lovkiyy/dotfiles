@@ -34,7 +34,7 @@
     "main-window-x": 833,
     "main-window-y": 18,
     "message-level": 2,
-    "open-dialog-dir": "/home/sleich",
+    "open-dialog-dir": "/home/sleich/tmp",
     "peer-congestion-algorithm": "",
     "peer-id-ttl-hours": 6,
     "peer-limit-global": 200,
