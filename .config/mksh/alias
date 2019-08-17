@@ -27,6 +27,7 @@ alias mpweb="mpv av://v4l2:/dev/video0"
 alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 alias andr="doas simple-mtpfs --device 1 -o allow_other /media"
 alias lsbk="doas lsblk -o NAME,MOUNTPOINT,SIZE,FSUSED,FSTYPE,PTTYPE,RM"
+alias sudo="echo use doas"
 
 # Git aliases
 alias ga="git add"
