@@ -66,6 +66,20 @@ colors () {
   echo
 }
 
+# Shows most used commands. $1 is the number of commands. 10 by default
+popular () {
+  if [ "$1" -gt 0 ];then
+    num=$1
+  else
+    num=10
+  fi
+
+  IFS='\n'
+  HISTORY="$(fc -l 0)"
+  echo $HISTORY | awk '{print $2}' | awk 'BEGIN {FS="|"}{print $1}'\
+    | sort | uniq -c | sort -n | tail -n $num | sort -nr
+}
+
 config_edit () {
   olddir="$PWD"
   dir=${XDG_CONFIG_HOME:-$HOME/.config}
