@@ -35,7 +35,7 @@
         set number relativenumber
         set mouse=a             " Mouse support
         set omnifunc=syntaxcomplete#Complete
-        set clipboard=unnamedplus
+        set clipboard=unnamed
 
 " Keybindings in russian layout
         set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -129,7 +129,7 @@ filetype plugin on
 
   " Copy selected text to system clipboard
   vnoremap <C-c> "+y
-  map <C-p> "+P
+  map <C-p> "+p
 
   " emacs movement keybindings in insert mode
   imap <C-a> <C-o>0
