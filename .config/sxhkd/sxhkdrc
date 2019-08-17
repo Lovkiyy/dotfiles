@@ -82,7 +82,7 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
@@ -105,8 +105,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-#super + {p,b,comma,period}
-	#bspc node -f @{parent,brother,first,second}
+super + {a,comma,period}
+	bspc node -f @{parent,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
@@ -116,9 +116,9 @@ super + {_,shift + }c
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# focus the last desktop
+super + Tab
+	bspc desktop -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -166,10 +166,17 @@ mod2 + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+mod2 + {1-9}
+  bspc desktop -s {1-9}
+
+super + apostrophe
+  bspc node -s last
+
 # Sticky window
 super + s
   bspwm-sticky
 
+# Make sticky window normal
 super + shift + s
   bspc node focused.sticky -g sticky;\
   bspc node -t tiled
