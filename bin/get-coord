@@ -1,0 +1,13 @@
+#!/bin/sh
+# This script returns latitude and longtitude separated by comma. Requires jq
+file="$XDG_DATA_HOME/coordinates"
+coord="$(curl -s https://ipinfo.io/geo | jq .loc | tr -d \" | tr ',' ':')"
+
+if [ $coord ];then
+  echo "$coord" > "$file"
+else
+  coord="$(cat "$file")"
+fi
+
+echo "$coord"
+
