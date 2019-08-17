@@ -6,6 +6,7 @@ c.content.autoplay = False
 c.content.canvas_reading = False
 c.content.notifications = False
 c.content.cookies.accept = "no-3rdparty"
+c.content.headers.referer = "same-domain"
 # It is the default but i want to make it explicit
 c.content.javascript.can_access_clipboard = False
 
