@@ -8,7 +8,6 @@ map i recolor
 
 
 # Colorscheme
-set font                        "Terminus 12"
 set default-bg                  "#1d2021" #00
 set default-fg                  "#ebdbb2" #01
 
