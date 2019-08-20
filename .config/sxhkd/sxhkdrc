@@ -180,3 +180,7 @@ super + s
 super + shift + s
   bspc node focused.sticky -g sticky;\
   bspc node -t tiled
+
+# Rotate tree
+super + shift + r
+  bspc node -R 90
