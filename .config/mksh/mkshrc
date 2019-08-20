@@ -62,7 +62,7 @@ _prompt_error () {
 PS1="[\$(_prompt_error)\$(_prompt_job)$(_prompt_host)\$(_prompt_dir)]$ "
 
 # Launch fasd. I should do it after defining PS1 because fasd puts it's code there
-eval "$(fasd --init posix-hook)"
+eval "$(fasd --init posix-hook posix-alias)"
 
 #############
 # toggle built-in aliases and utilities, and aliases and functions from mkshrc
