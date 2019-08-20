@@ -1,8 +1,8 @@
 # Apps
 super + {_,shift} + Return
-  {st,samedir}
+  {$TERMINAL,samedir}
 super + {r,m}
-  st -e {ranger,cmus}
+  $TERMINAL -e {ranger,cmus}
 super + w
   qutebrowser
 super + d
