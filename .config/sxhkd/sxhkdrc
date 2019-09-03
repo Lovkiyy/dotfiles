@@ -5,8 +5,8 @@ super + {r,m}
   $TERMINAL -e {ranger,cmus}
 super + w
   qutebrowser
-super + d
-  dmenu_run
+super + {_,shift} + d
+  {dmenu_run,j4-dmenu-desktop}
 
 # Music
 super + {p,comma,period}
