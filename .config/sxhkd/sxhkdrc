@@ -1,6 +1,6 @@
 # Apps
-super + {_,shift} + Return
-  {$TERMINAL,samedir}
+super + Return
+  $TERMINAL
 super + {r,m}
   $TERMINAL -e {ranger,cmus}
 super + w
