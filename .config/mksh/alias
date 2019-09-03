@@ -1,6 +1,6 @@
 # Clipboard handling
-alias xcopy='xsel -b -i -l /dev/null'
-alias xpaste='xsel -b -o -l /dev/null'
+alias xcopy='xclip -i -selection clipboard'
+alias xpaste='xclip -o -selection clipboard'
 
 alias cat=bat
 alias mon=gotop

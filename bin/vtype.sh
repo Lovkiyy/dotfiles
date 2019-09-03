@@ -1,7 +1,7 @@
 #!/bin/sh
 file=$(mktemp /tmp/vtype.XXXXX)
 
-xsel -b -o > $file
+xclip -o -selection clipboard > $file
 
 # For some reason i can't fold file in place
 change=$(fold -w 72 -s $file)
