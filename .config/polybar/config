@@ -115,7 +115,7 @@ type = custom/script
 exec = $HOME/src/scripts/music.sh
 interval = 5
 
-label = " %output%"
+label = " %output%"
 
 inherit = module/style
 color = ${colors.blue}
