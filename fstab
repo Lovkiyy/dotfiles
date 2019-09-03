@@ -1,9 +1,0 @@
-#
-# See fstab(5).
-#
-# <file system>					<dir>			<type>	<options>			<dump>	<pass>
-tmpfs						/tmp			tmpfs	defaults,nosuid,nodev		0       0
-tmpfs						/home/sleich/tmp	tmpfs	defaults,nosuid,nodev		0	0
-UUID=ec091c35-4293-4a60-89bc-94203acce3ec	/			ext4	defaults,noatime,discard	0	1
-UUID=BC4D-74B8					/boot			vfat	defaults			0	2
-UUID=76f69a7d-9e11-4a40-af81-5bd0f058d9b7	/media			ext4	defaults,nosuid,nodev,noauto	0	0
