@@ -41,11 +41,7 @@ Print
   ctl screenshot
 super + shift + p
   menu-system
-super + shift + m
-  bt-headset.sh
 super + shift + v
-  menu-cheat
-super + v
   start-vm
 super + b
   menu-book
