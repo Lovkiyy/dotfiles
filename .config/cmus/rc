@@ -1,3 +1,2 @@
 set output_plugin=pulse
 colorscheme gruvbox
-bind -f common L shell $TERMINAL -e clyrics -c
