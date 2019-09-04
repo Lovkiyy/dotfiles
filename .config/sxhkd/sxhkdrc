@@ -6,7 +6,7 @@ super + {r,m}
 super + w
   qutebrowser
 super + {_,shift} + d
-  {dmenu_exec,j4-dmenu-desktop --dmenu='dmenu-color -l 15'}
+  {dmenu_exec,j4-dmenu-desktop --dmenu='dmenu-color -i -l 15'}
 
 # Music
 super + {p,comma,period}
