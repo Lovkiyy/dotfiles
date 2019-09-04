@@ -1,0 +1,2 @@
+#!/bin/sh
+dmenu -fn 'Terminus:size=12' -nf '#a89984' -nb '#32302f' -sf '#ebdbb2' -sb '#8c6f64' $@
