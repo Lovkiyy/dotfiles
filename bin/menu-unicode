@@ -5,7 +5,7 @@
 # Must have xclip installed to even show menu.
 xclip -h >/dev/null || exit
 
-chosen=$(grep -v "#" "$XDG_CONFIG_HOME/X11/emoji" | dmenu -i -l 20)
+chosen=$(grep -v "#" "$XDG_CONFIG_HOME/X11/emoji" | dmenu-color -i -l 20)
 
 [ "$chosen" != "" ] || exit
 
