@@ -1,9 +1,0 @@
-#!/bin/sh
-width=300
-lines=15
-border=5
-monwidth=1600
-monheight=900
-dmenu -x "$(( $monwidth / 2 - $width / 2 ))"\
-  -y "$(( $monheight / 2 - 50 ))"\
-  -w "$width" -l $lines $@ -bw $border
