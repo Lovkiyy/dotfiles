@@ -1,6 +1,6 @@
 #!/bin/sh
 dir="$HOME/usr/doc/books"
-page=$(ls $dir | dmenu-center -l 15 -i)
+page=$(ls $dir | dmenu-color -l 15 -i)
 
 if [ "${page}" ]; then
 zathura "$dir/$page"

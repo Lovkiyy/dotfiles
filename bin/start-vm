@@ -1,5 +1,5 @@
 #!/bin/sh
 dir="$HOME/usr/vm"
-choice=$(ls $dir | dmenu-center) || exit 0
+choice=$(ls $dir | dmenu-color) || exit 0
 cd $dir/$choice
 ./start.sh

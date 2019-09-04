@@ -73,7 +73,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = $HOME/bin/dmenu-color -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab
