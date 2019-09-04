@@ -53,15 +53,15 @@ font-0 = Terminus:size=12;1
 font-1 = Ionicons:pixelsize=12;2
 font-2 = 3270Medium Nerd Font:pixelsize=12;3
 
-modules-left = bspwm
+modules-left = bspwm i3
 modules-right = cmus backlight pulseaudio battery-comb date updates
 modules-center =
 
 tray-position = right
 tray-padding = 3
 
-override-redirect = true
-wm-restack = bspwm
+;override-redirect = true
+;wm-restack = bspwm
 
 [module/style]
 color = ${colors.purple}
@@ -182,6 +182,46 @@ ws-icon-9 = 10;10
 
 ; Separator in between workspaces
 ; label-separator = |
+
+[module/i3]
+type = internal/i3
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+enable-click = false
+enable-scroll = false
+
+ws-icon-0 = 1; web
+ws-icon-1 = 2; term
+ws-icon-2 = 3; dev
+ws-icon-3 = 4; media
+ws-icon-4 = 5; music
+ws-icon-5 = 6; etc
+ws-icon-6 = 7; conf
+ws-icon-7 = 8; float
+ws-icon-8 = 9; gui
+ws-icon-9 = 10; vm
+
+label-mode = %mode%
+label-mode-padding = 1
+
+label-focused = %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #689d6a
+label-focused-padding = 1
+
+label-unfocused = %icon%
+;label-unfocused-foreground = #928374
+label-unfocused-padding = 1
+
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #c64e3d
+label-urgent-padding = 1
+
+label-visible = %icon%
+label-visible-padding = 1
 
 [settings]
 screenchange-reload = true
