@@ -20,7 +20,7 @@ exec --no-startup-id physlock -sm &
 
 exec --no-startup-id safeeyes &
 exec --no-startup-id xbanish &
-exec --no-startup-id sxhkd -c $XDG_CONFIG_HOME/sxhkd/sxhkdrc-i3 &
+exec --no-startup-id sxhkd &
 exec --no-startup-id redshift -l $(get-coord) &
 exec --no-startup-id blueman-applet &
 
