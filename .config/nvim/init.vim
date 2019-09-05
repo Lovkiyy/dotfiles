@@ -65,7 +65,6 @@
 " Vim plug
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vimwiki/vimwiki'
-Plug 'AndrewRadev/id3.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
