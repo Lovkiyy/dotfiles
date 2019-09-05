@@ -21,7 +21,7 @@ super + {minus,equal}
 
 # Brightness
 super + shift + {minus,equal}
-  doas xbacklight {-,+}5
+  sudo xbacklight {-,+}5
 
 # XF86 Keys
 XF86Audio{Play,Pause,Prev,Next}
@@ -34,7 +34,7 @@ XF86Audio{Lower,Raise}Volume
   pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 XF86MonBrightness{Down,Up}
-  doas xbacklight {-,+}5
+  sudo xbacklight {-,+}5
 
 # Scripts
 Print

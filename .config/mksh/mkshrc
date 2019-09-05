@@ -6,8 +6,8 @@ source $DIR/profile
 
 # XDG_RUNTIME_DIR is required by some applications
 if [ ! -d "${XDG_RUNTIME_DIR}" ]; then
-  doas mkdir "${XDG_RUNTIME_DIR}"
-  doas chown -R "${USER}" "${XDG_RUNTIME_DIR}"
+  sudo mkdir "${XDG_RUNTIME_DIR}"
+  sudo chown -R "${USER}" "${XDG_RUNTIME_DIR}"
   chmod 0700 "${XDG_RUNTIME_DIR}"
 fi
 

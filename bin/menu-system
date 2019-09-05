@@ -1,11 +1,11 @@
 #!/bin/sh
 choice=$(echo -n "suspend\nlock\npoweroff\nreboot" | dmenu-color) || exit 1
 if [ $choice = "suspend" ];then
-  doas zzz
+  sudo zzz
 elif [ $choice = "lock" ];then
   physlock -dsm
 elif [ $choice = "poweroff" ];then
-  doas poweroff
+  sudo poweroff
 elif [ $choice = "reboot" ];then
-  doas reboot
+  sudo reboot
 fi
