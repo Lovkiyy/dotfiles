@@ -2,18 +2,15 @@
 alias xcopy='xclip -i -selection clipboard'
 alias xpaste='xclip -o -selection clipboard'
 
-alias cat=bat
-alias mon=gotop
 
 alias ce=config_edit
 alias ns=inotes
-alias ex=exercism
+alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 alias me=mega-exec
 alias ka=killall
 alias yt=youtube-viewer
 alias v=nvim
 alias r=ranger
-alias d=dict
 alias gi="grep -i"
 alias mk="mkdir -pv"
 alias xi="sudo xbps-install"
@@ -21,11 +18,8 @@ alias xr="sudo xbps-remove -R"
 alias xq="xbps-query"
 alias tor="transmission-daemon"
 alias own="sudo chown -R $USER:$USER"
-alias wttr="curl -s wttr.in"
 alias ansicat="iconv -f CP437"
 alias mpweb="mpv av://v4l2:/dev/video0"
-alias ap="nvim $HOME/usr/notes/handbook/apps.md"
-alias andr="sudo simple-mtpfs --device 1 -o allow_other /media"
 alias lsbk="sudo lsblk -o NAME,MOUNTPOINT,SIZE,FSUSED,FSTYPE,PTTYPE,RM"
 
 # Git aliases
@@ -42,3 +36,4 @@ alias la="ls -lAh"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias calcurse="calcurse -D ~/usr/notes/calcurse"
 alias dmesg="sudo dmesg --ctime --color=always"
+alias cat=bat
