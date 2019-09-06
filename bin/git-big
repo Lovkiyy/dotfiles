@@ -1,0 +1,28 @@
+#!/bin/sh
+# This shell script displays all blob objects in the repository, sorted from
+# smallest to largest
+
+# Sample output:
+# 0d99bb931299  530KiB path/to/some-image.jpg
+# 2ba44098e28f   12MiB path/to/hires-image.png
+# bd1741ddce0d   63MiB path/to/some-video-1080p.mp4
+
+git rev-list --objects --all \
+| git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+| sed -n 's/^blob //p' \
+| sort --numeric-sort --key=2 \
+| cut -c 1-12,41- \
+| $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+# To archive further filtering insert any of the following lines before the sort line
+# To exclude files that are present in HEAD:
+# | grep -vF --file=<(git ls-tree -r HEAD | awk '{print $3}') \
+
+# To show only files exceeding given size (e.g. 1MiB = 2^20B):
+# | awk '$3 >= 2^20' \
+
+# To generate output that's more suitable for further processing by computers,
+# omit the last two lines of the base script. All they do is formatting.
+# This will leave you with something like this:
+# 0d99bb93129939b72069df14af0d0dbda7eb6dba 542455 path/to/some-image.jpg
+# 2ba44098e28f8f66bac5e21210c2774085d2319b 12446815 path/to/hires-image.png
+# bd1741ddce0d07b72ccf69ed281e09bf8a2d0b2f 65183843 path/to/some-video-1080p.mp4
