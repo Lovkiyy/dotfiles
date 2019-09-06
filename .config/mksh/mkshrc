@@ -1,4 +1,3 @@
-# TODO: history handling(something like !!);
 DIR="$HOME/.config/mksh"
 source $DIR/functions
 source $DIR/alias
@@ -11,7 +10,7 @@ if [ ! -d "${XDG_RUNTIME_DIR}" ]; then
   chmod 0700 "${XDG_RUNTIME_DIR}"
 fi
 
-HISTFILE="$XDG_DATA_HOME/mksh/history"
+HISTFILE="$XDG_DATA_HOME/mksh-history"
 HISTSIZE=10000
 appendpath "$HOME/bin"
 appendpath "/var/lib/flatpak/exports/bin"
@@ -30,7 +29,6 @@ bind '^L'='clear-screen'
 ##############
 # Shows background jobs, exit codes, current directory($HOME as ~),
 # user@hostname on ssh connection and if user is not $DEFAULT_USER
-# POSIX-compatible. TODO: git status
 DEFAULT_USER=sleich
 
 _prompt_dir () {
@@ -63,179 +61,3 @@ PS1="[\$(_prompt_error)\$(_prompt_job)$(_prompt_host)\$(_prompt_dir)]$ "
 
 # Launch fasd. I should do it after defining PS1 because fasd puts it's code there
 eval "$(fasd --init posix-hook posix-alias)"
-
-#############
-# toggle built-in aliases and utilities, and aliases and functions from mkshrc
-function enable {
-	\\builtin typeset doprnt=0 mode=1 x y z rv=0
-	\\builtin typeset b_alias i_alias i_func nalias=0 nfunc=0 i_all
-	\\builtin set -A b_alias
-	\\builtin set -A i_alias
-	\\builtin set -A i_func
-
-	# accumulate mksh built-in aliases, in ASCIIbetical order
-	i_alias[nalias]=autoload; b_alias[nalias++]='\\builtin typeset -fu'
-	i_alias[nalias]=functions; b_alias[nalias++]='\\builtin typeset -f'
-	i_alias[nalias]=hash; b_alias[nalias++]='\\builtin alias -t'
-	i_alias[nalias]=history; b_alias[nalias++]='\\builtin fc -l'
-	i_alias[nalias]=integer; b_alias[nalias++]='\\builtin typeset -i'
-	i_alias[nalias]=local; b_alias[nalias++]='\\builtin typeset'
-	i_alias[nalias]=login; b_alias[nalias++]='\\builtin exec login'
-	i_alias[nalias]=nameref; b_alias[nalias++]='\\builtin typeset -n'
-	i_alias[nalias]=nohup; b_alias[nalias++]='nohup '
-	i_alias[nalias]=r; b_alias[nalias++]='\\builtin fc -e -'
-	i_alias[nalias]=type; b_alias[nalias++]='\\builtin whence -v'
-
-	# accumulate mksh built-in utilities, in definition order, even ifndef
-	i_func[nfunc++]=.
-	i_func[nfunc++]=:
-	i_func[nfunc++]='['
-	i_func[nfunc++]=alias
-	i_func[nfunc++]=break
-	# \\builtin cannot, by design, be overridden
-	i_func[nfunc++]=builtin
-	i_func[nfunc++]=cat
-	i_func[nfunc++]=cd
-	i_func[nfunc++]=chdir
-	i_func[nfunc++]=command
-	i_func[nfunc++]=continue
-	i_func[nfunc++]=echo
-	i_func[nfunc++]=eval
-	i_func[nfunc++]=exec
-	i_func[nfunc++]=exit
-	i_func[nfunc++]=export
-	i_func[nfunc++]=false
-	i_func[nfunc++]=fc
-	i_func[nfunc++]=getopts
-	i_func[nfunc++]=global
-	i_func[nfunc++]=jobs
-	i_func[nfunc++]=kill
-	i_func[nfunc++]=let
-	i_func[nfunc++]=print
-	i_func[nfunc++]=pwd
-	i_func[nfunc++]=read
-	i_func[nfunc++]=readonly
-	i_func[nfunc++]=realpath
-	i_func[nfunc++]=rename
-	i_func[nfunc++]=return
-	i_func[nfunc++]=set
-	i_func[nfunc++]=shift
-	i_func[nfunc++]=source
-	i_func[nfunc++]=suspend
-	i_func[nfunc++]=test
-	i_func[nfunc++]=times
-	i_func[nfunc++]=trap
-	i_func[nfunc++]=true
-	i_func[nfunc++]=typeset
-	i_func[nfunc++]=ulimit
-	i_func[nfunc++]=umask
-	i_func[nfunc++]=unalias
-	i_func[nfunc++]=unset
-	i_func[nfunc++]=wait
-	i_func[nfunc++]=whence
-	i_func[nfunc++]=bg
-	i_func[nfunc++]=fg
-	i_func[nfunc++]=bind
-	i_func[nfunc++]=mknod
-	i_func[nfunc++]=printf
-	i_func[nfunc++]=sleep
-	i_func[nfunc++]=domainname
-	i_func[nfunc++]=extproc
-
-	# accumulate aliases from dot.mkshrc, in definition order
-	i_alias[nalias]=l; b_alias[nalias++]='ls -F'
-	i_alias[nalias]=la; b_alias[nalias++]='l -a'
-	i_alias[nalias]=ll; b_alias[nalias++]='l -l'
-	i_alias[nalias]=lo; b_alias[nalias++]='l -alo'
-
-	# accumulate functions from dot.mkshrc, in definition order
-	i_func[nfunc++]=enable
-
-	# collect all identifiers, sorted ASCIIbetically
-	\\builtin set -sA i_all -- "${i_alias[@]}" "${i_func[@]}"
-
-	# handle options, we don't do dynamic loading
-	while \\builtin getopts "adf:nps" x; do
-		case $x {
-		(a)
-			mode=-1
-			;;
-		(d)
-			# deliberately causing an error, like bash-static
-			;|
-		(f)
-			\\builtin print -ru2 enable: dynamic loading not available
-			\\builtin return 2
-			;;
-		(n)
-			mode=0
-			;;
-		(p)
-			doprnt=1
-			;;
-		(s)
-			\\builtin set -sA i_all -- . : break continue eval \
-			    exec exit export readonly return set shift times \
-			    trap unset
-			;;
-		(*)
-			\\builtin print -ru2 enable: usage: \
-			    "enable [-adnps] [-f filename] [name ...]"
-			return 2
-			;;
-		}
-	done
-	\\builtin shift $((OPTIND - 1))
-
-	# display builtins enabled/disabled/all/special?
-	if (( doprnt || ($# == 0) )); then
-		for x in "${i_all[@]}"; do
-			y=$(\\builtin alias "$x") || y=
-			[[ $y = "$x='\\\\builtin whence -p $x >/dev/null || (\\\\builtin print -r mksh: $x: not found; \\\\builtin exit 127) && \$(\\\\builtin whence -p $x)'" ]]; z=$?
-			case $mode:$z {
-			(-1:0|0:0)
-				\\builtin print -r -- "enable -n $x"
-				;;
-			(-1:1|1:1)
-				\\builtin print -r -- "enable $x"
-				;;
-			}
-		done
-		\\builtin return 0
-	fi
-
-	for x in "$@"; do
-		z=0
-		for y in "${i_alias[@]}" "${i_func[@]}"; do
-			[[ $x = "$y" ]] || \\builtin continue
-			z=1
-			\\builtin break
-		done
-		if (( !z )); then
-			\\builtin print -ru2 enable: "$x": not a shell builtin
-			rv=1
-			\\builtin continue
-		fi
-		if (( !mode )); then
-			# disable this
-			\\builtin alias "$x=\\\\builtin whence -p $x >/dev/null || (\\\\builtin print -r mksh: $x: not found; \\\\builtin exit 127) && \$(\\\\builtin whence -p $x)"
-		else
-			# find out if this is an alias or not, first
-			z=0
-			y=-1
-			while (( ++y < nalias )); do
-				[[ $x = "${i_alias[y]}" ]] || \\builtin continue
-				z=1
-				\\builtin break
-			done
-			if (( z )); then
-				# re-enable the original alias body
-				\\builtin alias "$x=${b_alias[y]}"
-			else
-				# re-enable the original utility/function
-				\\builtin unalias "$x"
-			fi
-		fi
-	done
-	\\builtin return $rv
-}
