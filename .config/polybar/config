@@ -38,7 +38,6 @@ lightorange = #fe8019
 width = 100%
 height = 18
 fixed-center = true
-monitor = ${env:MONITOR:eDP1}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
