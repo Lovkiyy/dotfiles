@@ -102,7 +102,7 @@ inherit = module/style
 
 [module/battery-comb]
 type = custom/script
-exec = $HOME/src/scripts/battery-combined-udev.sh
+exec = battery-combined-udev.sh
 tail = true
 interval = 20
 
@@ -111,7 +111,7 @@ inherit = module/style
 
 [module/cmus]
 type = custom/script
-exec = $HOME/src/scripts/music.sh
+exec = music.sh
 interval = 5
 
 label = " %output%"
@@ -121,7 +121,7 @@ color = ${colors.blue}
 
 [module/updates]
 type = custom/script
-exec = $HOME/src/scripts/updates.sh
+exec = updates.sh
 label = " %output%"
 interval = 20
 
