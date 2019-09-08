@@ -2,10 +2,6 @@ uc () {
   echo -n "\u$@"
 }
 
-retrocat () {
-  cat $@ | beep -c -f 500 -D 40 -l 10
-}
-
 hist_search () {
   fc -l 0 | fzf +s --tac --height 17 | cut -f 2-
 }
@@ -53,17 +49,6 @@ fix () {
   tput rs1
   clear
   echo -e "\e[0m"
-}
-
-colors () {
-  C=0
-  while [ $C -lt 255 ]; do
-      tput setab $C
-      echo -n "$C "
-      C=$((C + 1))
-  done
-  tput sgr0
-  echo
 }
 
 # Shows most used commands. $1 is the number of commands. 10 by default
