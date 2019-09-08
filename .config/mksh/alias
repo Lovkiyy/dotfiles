@@ -2,20 +2,17 @@
 alias xcopy='xclip -i -selection clipboard'
 alias xpaste='xclip -o -selection clipboard'
 
-
 alias ce=config_edit
 alias ns=inotes
 alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 alias me=mega-exec
 alias ka=killall
-alias yt=youtube-viewer
 alias v=nvim
 alias r=ranger
+alias p="sudo pacman"
+alias y="yay"
 alias gi="grep -i"
 alias mk="mkdir -pv"
-alias xi="sudo xbps-install"
-alias xr="sudo xbps-remove -R"
-alias xq="xbps-query"
 alias own="sudo chown -R $USER:$USER"
 alias ansicat="iconv -f CP437"
 alias mpweb="mpv av://v4l2:/dev/video0"
