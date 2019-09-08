@@ -36,11 +36,6 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'a': 'https://myanimelist.net/search/all?q={}'}
 
 c.bindings.commands = {
-        # This is workaround for https://github.com/qutebrowser/qutebrowser/issues/4579
-        # Should check this one periodically
-        'normal': {
-            '<tab>'           : 'nop',
-            },
         'insert': {
             #'<Ctrl-f>'        : 'fake-key <Right>',
             '<Ctrl-b>'        : 'fake-key <Left>',
