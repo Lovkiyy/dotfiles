@@ -9,8 +9,8 @@ alias me=mega-exec
 alias ka=killall
 alias v=nvim
 alias r=ranger
-alias p="sudo pacman"
-alias y="yay"
+alias p="sudo pacman --color=always"
+alias y="yay --color=always"
 alias gi="grep -i"
 alias mk="mkdir -pv"
 alias own="sudo chown -R $USER:$USER"
