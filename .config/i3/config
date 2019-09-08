@@ -36,10 +36,6 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+braceright workspace next
 bindsym $mod+bracketleft  workspace prev
 
-# cycle through windows
-bindsym $mod+c exec --no-startup-id $HOME/tmp/next_ws.py
-bindsym $mod+shift+c exec --no-startup-id i3 $HOME/tmp/prev.py
-
 # Split type
 bindsym $mod+z split h
 bindsym $mod+v split v
