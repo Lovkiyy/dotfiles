@@ -69,8 +69,10 @@ config.bind(';dl','hint links download')
 config.bind('gd','download --mhtml')
 
 # Fonts settings
-c.fonts.web.family.serif = "M+ 1p"
-c.fonts.monospace = "Source Code Pro"
+c.fonts.web.family.serif = "sans-serif"
+c.fonts.web.family.standard = "sans-serif"
+c.fonts.web.family.fixed = "monospace"
+c.fonts.monospace = "monospace"
 c.fonts.completion.category = "bold 10pt monospace"
 c.fonts.completion.entry = "10pt monospace"
 c.fonts.debug_console = "10pt monospace"
