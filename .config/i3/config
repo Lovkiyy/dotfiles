@@ -18,7 +18,9 @@ exec --no-startup-id xset -b dpms 0 0 240
 exec --no-startup-id physlock -sm &
 
 exec --no-startup-id safeeyes &
+exec --no-startup-id cmst -m -w 3 &
 exec --no-startup-id xbanish &
+exec --no-startup-id dunst &
 exec --no-startup-id sxhkd &
 exec --no-startup-id redshift -l $(get-coord) &
 exec --no-startup-id blueman-applet &
