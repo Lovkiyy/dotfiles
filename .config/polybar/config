@@ -123,7 +123,7 @@ color = ${colors.blue}
 type = custom/script
 exec = updates.sh
 label = " %output%"
-interval = 20
+interval = 120
 
 inherit = module/style
 color = ${colors.blue}
