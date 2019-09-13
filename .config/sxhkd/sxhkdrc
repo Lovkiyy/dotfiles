@@ -21,7 +21,7 @@ super + {minus,equal}
 
 # Brightness
 super + shift + {minus,equal}
-  sudo xbacklight {-,+}5
+  brightnessctl s 5%{-,+}
 
 # XF86 Keys
 XF86Audio{Play,Pause,Prev,Next}
