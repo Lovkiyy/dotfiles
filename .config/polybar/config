@@ -51,6 +51,7 @@ module-margin-right = 0
 font-0 = Terminus:size=12;1
 font-1 = Ionicons:pixelsize=12;2
 font-2 = Sauce Code Pro Nerd Font:pixelsize=12;3
+font-3 = IPAPGothic:size=11;4
 
 modules-left = bspwm i3
 modules-right = cmus backlight pulseaudio battery-comb date updates
