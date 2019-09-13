@@ -34,7 +34,7 @@ XF86Audio{Lower,Raise}Volume
   pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 XF86MonBrightness{Down,Up}
-  sudo xbacklight {-,+}5
+  brightnessctl s 5%{-,+}
 
 # Scripts
 Print
