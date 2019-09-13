@@ -18,6 +18,9 @@ fi
 bind -m '^R'='^E^[ hist_search^[^E'
 bind '^L'='clear-screen'
 
+# Shell settings
+set -o utf8-mode
+
 ### Prompt ###
 ##############
 # Shows background jobs, exit codes, current directory($HOME as ~),
