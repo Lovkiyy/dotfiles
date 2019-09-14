@@ -51,12 +51,11 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Terminus:size=12;1
-font-1 = Ionicons:pixelsize=12;2
-font-2 = Sauce Code Pro Nerd Font:pixelsize=12;3
-font-3 = IPAPGothic:size=11;4
+font-1 = Material Design Icons:size=12;2
+font-2 = IPAPGothic:size=11;4
 
 modules-left = i3
-modules-right = cmus backlight pulseaudio battery-comb date updates
+modules-right = music backlight pulseaudio battery-comb date updates
 modules-center =
 
 tray-position = right
@@ -68,17 +67,12 @@ color = ${colors.purple}
 format-padding = 2
 format-background = ${self.color}
 
-[module/kbd]
-type = custom/script
-exec = $HOME/src/scripts/kbd-layout.sh
-interval = 2
-
 [module/backlight]
 type = internal/xbacklight
 card = intel_backlight
 enable-scroll = false
 format = <label>
-label = " %percentage%%"
+label = "猪 %percentage%%"
 
 ; color of this module is lighter because
 ; it seems pale on yellow background
@@ -96,7 +90,7 @@ date-alt = "%Y-%m-%d"
 time = "%H:%M"
 time-alt = "%H:%M:%S"
 
-label = " %date% - %time%"
+label = " %date% - %time%"
 color = ${colors.red}
 inherit = module/style
 
@@ -109,12 +103,12 @@ interval = 20
 color = ${colors.purple}
 inherit = module/style
 
-[module/cmus]
+[module/music]
 type = custom/script
 exec = mpris-status.sh
 interval = 5
 
-label = " %output%"
+label = " %output%"
 
 inherit = module/style
 color = ${colors.blue}
@@ -122,7 +116,7 @@ color = ${colors.blue}
 [module/updates]
 type = custom/script
 exec = updates.sh
-label = " %output%"
+label = " %output%"
 interval = 120
 
 inherit = module/style
@@ -132,13 +126,17 @@ color = ${colors.blue}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-label-muted = " muted"
-label-volume = " %percentage%%"
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.aqua}
+format-volume-padding = 2
+format-muted-padding = 2
 
-label-volume-background = ${colors.aqua}
-label-volume-padding = 2
+label-muted = " muted"
+label-volume = %percentage%%
 
-label-muted-padding = 2
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/xwindow]
 type = internal/xwindow
@@ -153,16 +151,16 @@ format = <label-state> <label-mode>
 enable-click = false
 enable-scroll = false
 
-ws-icon-0 = 1; web
-ws-icon-1 = 2; term
-ws-icon-2 = 3; dev
-ws-icon-3 = 4; media
-ws-icon-4 = 5; music
-ws-icon-5 = 6; etc
-ws-icon-6 = 7; conf
-ws-icon-7 = 8; float
-ws-icon-8 = 9; gui
-ws-icon-9 = 10; vm
+ws-icon-0 = 1; web
+ws-icon-1 = 2; term
+ws-icon-2 = 3; dev
+ws-icon-3 = 4; media
+ws-icon-4 = 5; music
+ws-icon-5 = 6; etc
+ws-icon-6 = 7; conf
+ws-icon-7 = 8; float
+ws-icon-8 = 9; gui
+ws-icon-9 = 10; vm
 
 label-mode = %mode%
 label-mode-padding = 1
