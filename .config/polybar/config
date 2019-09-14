@@ -55,7 +55,7 @@ font-1 = Ionicons:pixelsize=12;2
 font-2 = Sauce Code Pro Nerd Font:pixelsize=12;3
 font-3 = IPAPGothic:size=11;4
 
-modules-left = bspwm i3
+modules-left = i3
 modules-right = cmus backlight pulseaudio battery-comb date updates
 modules-center =
 
@@ -143,44 +143,6 @@ label-muted-padding = 2
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-
-[module/bspwm]
-type = internal/bspwm
-
-enable-click = false
-enable-scroll = false
-
-label-focused = %icon%
-label-focused-foreground = #ffffff
-label-focused-background = #689d6a
-label-focused-padding = 1
-
-label-occupied = %icon%
-label-occupied-padding = 1
-
-label-urgent = %icon%
-label-urgent-foreground = #000000
-label-urgent-background = #c64e3d
-label-urgent-padding = 1
-
-;label-empty = %index%
-label-empty = %icon%
-label-empty-foreground = #928374
-label-empty-padding = 1
-
-ws-icon-0 = 1; web
-ws-icon-1 = 2; term
-ws-icon-2 = 3; dev
-ws-icon-3 = 4; media
-ws-icon-4 = 5; music
-ws-icon-5 = 6; etc
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 10;10
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
