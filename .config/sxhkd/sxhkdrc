@@ -10,7 +10,7 @@ super + {_,shift} + d
 
 # Music
 super + {p,comma,period}
-  cmus-remote {--pause,--prev,--next}
+  playerctl -p cmus {play-pause,previous,next}
 
 super + shift + {comma,period}
   cmus-remote --seek {-10,+10}
