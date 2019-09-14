@@ -13,7 +13,7 @@ super + {p,comma,period}
   playerctl -p cmus {play-pause,previous,next}
 
 super + shift + {comma,period}
-  cmus-remote --seek {-10,+10}
+  playerctl -p cmus position 10{-,+}
 
 # Volume
 super + {minus,equal}
