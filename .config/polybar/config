@@ -111,7 +111,7 @@ inherit = module/style
 
 [module/cmus]
 type = custom/script
-exec = music.sh
+exec = mpris-status.sh
 interval = 5
 
 label = " %output%"
