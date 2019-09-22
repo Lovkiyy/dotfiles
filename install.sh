@@ -1,6 +1,6 @@
 #!/bin/sh
 # TODO: check on files/directories with spaces
-src="$(dirname $0)/.config"
+src=$(realpath "$(dirname $0)")/.config
 dest="${XDG_CONFIG_HOME:-$HOME/.config}"
 ln_opts="-s -i -r"
 script_name="$(basename $0)"
