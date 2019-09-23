@@ -7,7 +7,6 @@ export EDITOR=nvim
 export BROWSER=qutebrowser
 export TERMINAL=alacritty
 
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
