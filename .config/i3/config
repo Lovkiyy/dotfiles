@@ -10,15 +10,11 @@ exec_always --no-startup-id bars
 
 exec --no-startup-id xset r rate 300 50
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:toggle,altwin:swap_lalt_lwin,ctrl:nocaps,terminate:ctrl_alt_bksp"
-exec --no-startup-id xset -b dpms 0 0 240
 exec --no-startup-id hsetroot -fill $XDG_CONFIG_HOME/X11/wall
 
-exec --no-startup-id dex &
-exec --no-startup-id safeeyes &
+exec --no-startup-id dex -a -s "${XDG_CONFIG_HOME:-$HOME/.config}"/autostart &
 exec --no-startup-id xbanish &
-exec --no-startup-id dunst &
 exec --no-startup-id sxhkd &
-exec --no-startup-id redshift -l $(get-coord) -t 5700:3000 -g 1:1:0.65 -b 1.0:0.6 &
 
 # Sticky window
 bindsym $mod+g sticky toggle; floating toggle; [floating] resize set 900 px 650 px; move position center; [floating con_id=__focused__] move scratchpad; scratchpad show
