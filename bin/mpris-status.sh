@@ -6,4 +6,6 @@ if [ "$status" = "Playing" ];then
   echo "$info"
 elif [ "$status" = "Paused" ];then
   echo "$info "
+else
+  echo ""
 fi
