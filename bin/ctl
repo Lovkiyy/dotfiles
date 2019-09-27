@@ -22,22 +22,9 @@ battery_status () {
   echo "Main battery:\n  Charge: ${bat0_charge}%\n  Status: ${bat0_status}\nReplaceable battery:\n  Charge: ${bat1_charge}%\n  Status: ${bat1_status}"
 }
 
-toggle_touchpad () {
-  name="SynPS/2 Synaptics TouchPad"
-  state=$(xinput list-props "$name" | sed '2q;d' | awk '{print $4}')
-  if [ $state = 0 ];then
-    xinput enable "$name"
-    echo "Enabled touchpad"
-  else
-    xinput disable "$name"
-    echo "Disabled touchpad"
-  fi
-}
-
 case "$1" in
   blank) screen_blank ;;
   wall) set_wallpaper $2 ;;
-  touch*) toggle_touchpad ;;
   batt*) battery_status;;
   screen*) screenshot ;;
   *) echo "$1 - unknown function"
