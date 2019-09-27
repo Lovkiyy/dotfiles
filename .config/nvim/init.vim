@@ -1,19 +1,3 @@
-"        ________ ++     ________
-"       /VVVVVVVV\++++  /VVVVVVVV\
-"       \VVVVVVVV/++++++\VVVVVVVV/
-"        |VVVVVV|++++++++/VVVVV/'
-"        |VVVVVV|++++++/VVVVV/'
-"       +|VVVVVV|++++/VVVVV/'+
-"     +++|VVVVVV|++/VVVVV/'+++++
-"   +++++|VVVVVV|/VVVVV/'+++++++++
-"     +++|VVVVVVVVVVV/'+++++++++
-"       +|VVVVVVVVV/'+++++++++
-"        |VVVVVVV/'+++++++++
-"        |VVVVV/'+++++++++
-"        |VVV/'+++++++++
-"        'V/'   ++++++
-"                 ++
-
 " Basic Settings
         let mapleader = " "
         filetype off            " Helps force plugins to load correctly when it's turned back below
