@@ -28,7 +28,7 @@ XF86Audio{Play,Pause,Prev,Next}
   cmus-remote {--play,--pause,--prev,--next}
 
 XF86Audio{_,Mic}Mute
-  {pactl set-sink-mute @DEFAULT_SINK@ toggle,pactl set-source-mute @DEFAULT_SOURCE@ toggle}
+  pactl {set-sink-mute @DEFAULT_SINK@ toggle,set-source-mute @DEFAULT_SOURCE@ toggle}
 
 XF86Audio{Lower,Raise}Volume
   pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
@@ -47,10 +47,6 @@ super + b
   menu-book
 super + grave
   menu-unicode
-
-# Pokoy
-super + shift + b
-  pokoy -n
 
 # Reload config
 super + alt + r
