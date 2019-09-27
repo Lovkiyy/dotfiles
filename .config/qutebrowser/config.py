@@ -86,13 +86,7 @@ c.fonts.prompts = "10pt monospace"
 c.fonts.statusbar = "10pt monospace"
 c.fonts.tabs = "10pt monospace"
 
-# i am still waiting for it
-#config.set('content.user_stylesheets', [], '*://github.com')
-
-############## Solarized color scheme ###############
-#####################################################
-#####################################################
-
+# Colors
 base00 = "#1d2021"
 base01 = "#3c3836"
 base02 = "#504945"
@@ -109,8 +103,6 @@ base0C = "#8ec07c"
 base0D = "#83a598"
 base0E = "#d3869b"
 base0F = "#d65d0e"
-
-# set qutebrowser colors
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
