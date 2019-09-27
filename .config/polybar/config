@@ -138,10 +138,6 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
 [module/i3]
 type = internal/i3
 ; Available tags:
