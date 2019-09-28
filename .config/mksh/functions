@@ -6,7 +6,7 @@ pc () {
 # Grep using find
 gf () {
   grep --ignore-case --no-messages --color=auto $1 \
-    $(fd . --absolute-path --hidden --type f $2)
+    $(fd . --absolute-path --hidden -E '.git' --type f $2)
 }
 
 uc () {
