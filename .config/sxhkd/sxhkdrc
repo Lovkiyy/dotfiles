@@ -4,16 +4,13 @@ super + Return
 super + {r,m}
   $TERMINAL -e {ranger,cmus}
 super + w
-  qutebrowser
+  $BROWSER
 super + {_,shift} + d
-  {dmenu_exec,i3-dmenu-desktop --dmenu='dmenu-color -i -l 15'}
+  {dmenu_exec,j4-dmenu-desktop --dmenu='dmenu-color -i -l 15'}
 
 # Music
 super + {p,comma,period}
   playerctl -p cmus {play-pause,previous,next}
-
-super + shift + {comma,period}
-  playerctl -p cmus position 10{-,+}
 
 # Volume
 super + {minus,equal}
@@ -25,7 +22,7 @@ super + shift + {minus,equal}
 
 # XF86 Keys
 XF86Audio{Play,Pause,Prev,Next}
-  cmus-remote {--play,--pause,--prev,--next}
+  playerctl -p cmus {play-pause,previous,next}
 
 XF86Audio{_,Mic}Mute
   pactl {set-sink-mute @DEFAULT_SINK@ toggle,set-source-mute @DEFAULT_SOURCE@ toggle}
