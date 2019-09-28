@@ -7,6 +7,7 @@ c.content.canvas_reading = False
 c.content.notifications = False
 c.content.cookies.accept = "no-3rdparty"
 c.content.headers.referer = "same-domain"
+c.content.webrtc_ip_handling_policy = "default-public-interface-only"
 # It is the default but i want to make it explicit
 c.content.javascript.can_access_clipboard = False
 
@@ -21,8 +22,6 @@ c.aliases = {'w': 'session-save',
         'q': 'close',
         'qa': 'quit',
         'cs': 'config-source'}
-
-c.editor.command = ['st', '-e', 'nvim', '{}']
 
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'aw': 'https://wiki.archlinux.org/?search={}',
