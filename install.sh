@@ -2,7 +2,7 @@
 # TODO: check on files/directories with spaces
 src=$(realpath "$(dirname $0)")/.config
 dest="${XDG_CONFIG_HOME:-$HOME/.config}"
-ln_opts="-s -i -r"
+ln_opts="-s -f"
 script_name="$(basename $0)"
 
 if [ ! -d $src ];then
@@ -21,7 +21,7 @@ dir="$src/*/*"
 for i in $dir; do
   destfile="${dest}${i#$src}"
   if [ ! -e $(dirname $destfile) ];then
-    mkdir $(dirname $destfile)
+    mkdir -p $(dirname $destfile)
   fi
   ln $ln_opts $i $destfile
 done
