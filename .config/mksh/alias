@@ -15,6 +15,7 @@ alias gi="grep -i"
 alias mk="mkdir -pv"
 alias own="sudo chown -R $USER:$USER"
 alias ansicat="iconv -f CP437"
+alias testmic="arecord -vvv -f dat /dev/null"
 alias mpweb="mpv av://v4l2:/dev/video0"
 alias lsbk="sudo lsblk -o NAME,MOUNTPOINT,SIZE,FSUSED,FSTYPE,PTTYPE,RM"
 
