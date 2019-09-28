@@ -16,7 +16,50 @@ exec --no-startup-id hsetroot -fill $XDG_CONFIG_HOME/X11/wall
 
 exec --no-startup-id dex -a -s "${XDG_CONFIG_HOME:-$HOME/.config}"/autostart &
 exec --no-startup-id xbanish &
-exec --no-startup-id sxhkd &
+
+# Apps
+bindsym $mod+Return exec $TERMINAL
+bindsym $mod+r exec $TERMINAL -e ranger
+bindsym $mod+m exec $TERMINAL -e cmus
+bindsym $mod+w exec $BROWSER
+
+# dmenu
+bindsym $mod+d exec dmenu_exec
+bindsym $mod+Shift+d exec j4-dmenu-desktop --dmenu='dmenu-color -i -l 15'
+
+# Music
+bindsym $mod+p exec playerctl -p cmus play-pause
+bindsym $mod+comma exec playerctl -p cmus previous
+bindsym $mod+period exec playerctl -p cmus next
+
+bindsym XF86AudioPlay exec playerctl -p cmus play
+bindsym XF86AudioPause exec playerctl -p cmus pause
+bindsym XF86AudioPrev exec playerctl -p cmus previous
+bindsym XF86AudioNext exec playerctl -p cmus next
+
+# Volume
+bindsym $mod+minus exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+equal exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Brightness
+bindsym $mod+Shift+minus exec brightnessctl s 5%-
+bindsym $mod+Shift+equal exec brightnessctl s 5%+
+
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+
+# Scripts
+bindsym Print exec ctl screenshot
+bindsym $mod+Shift+p exec menu-system
+bindsym $mod+Shift+v exec start-vm
+bindsym $mod+b exec menu-book
+bindsym $mod+grave exec menu-unicode
 
 # Sticky window
 bindsym $mod+g sticky toggle; floating toggle; [floating] resize set 900 px 650 px; move position center; [floating con_id=__focused__] move scratchpad; scratchpad show
@@ -43,8 +86,10 @@ bindsym $mod+f fullscreen toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# restart i3 inplace
-bindsym $mod+Escape restart
+# restart/kill i3
+bindsym $mod+Escape reload
+bindsym $mod+Shift+Escape restart
+bindsym $mod+Shift+BackSpace exit
 
 # kill focused window
 bindsym $mod+q kill
