@@ -1,3 +1,8 @@
+# Copy password to be pasted only once
+pc () {
+  pass $@ | sed 1q | xclip -sel clipboard -l 1
+}
+
 uc () {
   echo -n "\u$@"
 }
