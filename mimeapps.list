@@ -1,4 +1,3 @@
-
 [Default Applications]
 MimeType=text/html=org.qutebrowser.qutebrowser.desktop
 text/html=org.qutebrowser.qutebrowser.desktop
@@ -9,15 +8,9 @@ application/rdf+xml=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/qute=org.qutebrowser.qutebrowser.desktop
-image/bmp=sxiv.desktop;
-image/gif=sxiv.desktop;org.qutebrowser.qutebrowser.desktop;
-image/jpeg=sxiv.desktop;org.qutebrowser.qutebrowser.desktop;
-image/jpg=sxiv.desktop;
-image/png=sxiv.desktop;org.qutebrowser.qutebrowser.desktop;
-image/tiff=sxiv.desktop;
-image/x-bmp=sxiv.desktop;
-image/x-portable-anymap=sxiv.desktop;
-image/x-portable-bitmap=sxiv.desktop;
-image/x-portable-graymap=sxiv.desktop;
-image/x-tga=sxiv.desktop;
-image/x-xpixmap=sxiv.desktop;
+image/gif=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
+image/jpeg=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
+image/jpg=vimiv.desktop;
+image/png=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
+image/tiff=vimiv.desktop;
+image/svg=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
