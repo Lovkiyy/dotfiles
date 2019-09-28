@@ -19,19 +19,14 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-#Bindings
+# Bindings
 bind -m '^R'='^E^[ hist_search^[^E'
 bind '^L'='clear-screen'
 
 # Shell settings
 set -o utf8-mode
 
-### Prompt ###
-##############
-# Shows background jobs, exit codes, current directory($HOME as ~),
-# user@hostname on ssh connection and if user is not $DEFAULT_USER
-DEFAULT_USER=sleich
-
+# Prompt. Shows background jobs, exit codes, current directory($HOME as ~),
 _prompt_dir () {
   local dir=${PWD#$HOME}
   case $PWD in
@@ -46,19 +41,13 @@ _prompt_job () {
   fi
 }
 
-_prompt_host () {
-  if [ "$USER" != "$DEFAULT_USER" ] || [ -n "$SSH_CLIENT" ];then
-    echo -n "${USER}@$(hostname) "
-  fi
-}
-
 _prompt_error () {
   if [ $? -ne 0 ];then
     echo -n "!${?} "
   fi
 }
 
-PS1="[\$(_prompt_error)\$(_prompt_job)$(_prompt_host)\$(_prompt_dir)]$ "
+PS1="[\$(_prompt_error)\$(_prompt_job)\$(_prompt_dir)]$ "
 
 # Launch fasd. I should do it after defining PS1 because fasd puts it's code there
 eval "$(fasd --init posix-hook posix-alias)"
