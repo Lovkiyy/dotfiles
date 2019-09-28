@@ -22,15 +22,6 @@ passgen () {
   sed 15q /dev/urandom | tr -dc 'a-zA-Z0-9-!?:;<>[]{}.,/\@#$%^&*()_+~' | fold -w ${1:-20} | sed 1q
 }
 
-appendpath () {
-    case ":$PATH:" in
-        *:"$1":*)
-            ;;
-        *)
-            PATH="${PATH:+$PATH:}$1"
-    esac
-}
-
 run () {
   number=$1
   shift
@@ -49,20 +40,6 @@ fix () {
   tput rs1
   clear
   echo -e "\e[0m"
-}
-
-# Shows most used commands. $1 is the number of commands. 10 by default
-popular () {
-  if [ "$1" -gt 0 ];then
-    num=$1
-  else
-    num=10
-  fi
-
-  IFS='\n'
-  HISTORY="$(fc -l 0)"
-  echo $HISTORY | awk '{print $2}' | awk 'BEGIN {FS="|"}{print $1}'\
-    | sort | uniq -c | sort -n | tail -n $num | sort -nr
 }
 
 config_edit () {
