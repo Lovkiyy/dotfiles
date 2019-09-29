@@ -61,7 +61,7 @@ config_edit () {
 # cd .. $1 times; else - cd ..
 .. () {
     if [ -n "$1" ]; then
-        NUM=$(grep -o '[0-9]\+' <<< "$1")
+        NUM=$(echo "$1" | grep -o '[0-9]\+')
         START=0
         while [ "$START" -lt "$NUM" ]
         do
