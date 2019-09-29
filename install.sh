@@ -1,5 +1,5 @@
 #!/bin/sh
-# TODO: check on files/directories with spaces
+# Requires fd
 src=$(realpath "$(dirname $0)")/.config
 dest="${XDG_CONFIG_HOME:-$HOME/.config}"
 ln_opts="-s -f"
@@ -17,11 +17,7 @@ if [ ! -w $dest ];then
   echo $script_name: $dest is not writable; exit 1
 fi
 
-dir="$src/*/*"
-for i in $dir; do
-  destfile="${dest}${i#$src}"
-  if [ ! -e $(dirname $destfile) ];then
-    mkdir -p $(dirname $destfile)
-  fi
-  ln $ln_opts $i $destfile
-done
+cd "$src"
+fd --hidden --type d --exec-batch mkdir -p "$dest"/{}
+fd --hidden --type f --exec ln $ln_opts "$src"/{} "$dest"/{}
+cd "$OLDPWD"
