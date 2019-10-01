@@ -1,8 +1,8 @@
-# Borders
 floating_modifier Shift
 set $mod Mod4
 hide_edge_borders smart
 smart_gaps on
+focus_follows_mouse no
 for_window [class="^.*"] border pixel 2
 gaps inner 3
 floating_maximum_size -1 x 800
