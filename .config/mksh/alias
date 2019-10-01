@@ -2,6 +2,8 @@
 alias xcopy='xclip -i -selection clipboard'
 alias xpaste='xclip -o -selection clipboard'
 
+alias sc="systemctl --user"
+alias ssc="sudo systemctl"
 alias ce=config_edit
 alias ns=inotes
 alias ap="nvim $HOME/usr/notes/handbook/apps.md"
