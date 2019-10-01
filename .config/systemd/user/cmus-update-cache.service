@@ -1,0 +1,6 @@
+[Unit]
+Description = Update cmus cache
+
+[Service]
+Type=oneshot
+ExecStart = /usr/bin/cmus-remote --raw 'update-cache'
