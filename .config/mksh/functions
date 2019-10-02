@@ -26,9 +26,8 @@ iman () {
 }
 
 inotes () {
-  cd "$HOME/usr/notes"
-  choice="$(fd . -t f -E .git -E *.jpg -E *.png -E *.csv -E calcurse | fzf --height 8)" && "$EDITOR" "$choice"
-  cd "$OLDPWD"
+  dir="$HOME/usr/notes"
+  choice="$(cd "$dir" && fd . -t f -E .git -E *.jpg -E *.png -E *.csv -E calcurse | fzf --height 8)" && "$EDITOR" "$dir"/"$choice"
 }
 
 passgen () {
@@ -53,9 +52,7 @@ fix () {
 
 config_edit () {
   dir="${XDG_CONFIG_HOME:-$HOME/.config}"
-  cd "$dir"
-  file="$(fd -L . -t f | fzf --height=15)" && "$EDITOR" "$dir/$file"
-  cd "$OLDPWD"
+  file="$(cd "$dir" && fd -L . -t f | fzf --height=15)" && "$EDITOR" "$dir/$file"
 }
 
 # cd .. $1 times; else - cd ..
