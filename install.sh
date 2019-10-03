@@ -1,8 +1,8 @@
 #!/bin/sh
-# Requires fd
+# Script doesn't handle filenames with spaces well
 src=$(realpath "$(dirname $0)")/.config
 dest="${XDG_CONFIG_HOME:-$HOME/.config}"
-ln_opts="-s -f"
+ln_opts="-s -f -v"
 script_name="$(basename $0)"
 
 if [ ! -d $src ];then
@@ -18,6 +18,6 @@ if [ ! -w $dest ];then
 fi
 
 cd "$src"
-fd --hidden --type d --exec-batch mkdir -p "$dest"/{}
-fd --hidden --type f --exec ln $ln_opts "$src"/{} "$dest"/{}
+mkdir -pv $(find -type d | sed "s|^\./|$dest/|")
+find -type f | sed 's|^\./||' | xargs -I _ ln $ln_opts "$src"/_ "$dest"/_
 cd "$OLDPWD"
