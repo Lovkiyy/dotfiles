@@ -1,16 +1,12 @@
 [Default Applications]
-MimeType=text/html=org.qutebrowser.qutebrowser.desktop
-text/html=org.qutebrowser.qutebrowser.desktop
-text/xml=org.qutebrowser.qutebrowser.desktop
-application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
-application/xml=org.qutebrowser.qutebrowser.desktop
-application/rdf+xml=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/qute=org.qutebrowser.qutebrowser.desktop
-image/gif=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
-image/jpeg=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
-image/jpg=vimiv.desktop;
-image/png=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
-image/tiff=vimiv.desktop;
-image/svg=vimiv.desktop;org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/magnet=torrent.desktop
+application/x-bittorrent=torrent.desktop
+text/plain=text.desktop
+text/html=browser.desktop
+application/pdf=doc.desktop
+application/epub+zip=doc.desktop
+image/gif=img.desktop;browser.desktop;
+image/jpeg=img.desktop
+image/jpg=img.desktop
+image/png=img.desktop
+image/svg=img.desktop;browser.desktop;
