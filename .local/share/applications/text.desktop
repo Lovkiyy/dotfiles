@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Text Editor
+Exec=nvim %F
+Terminal=true
+NoDisplay=true
+Type=Application
