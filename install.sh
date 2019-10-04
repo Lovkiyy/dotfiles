@@ -1,8 +1,9 @@
 #!/bin/sh
-# Script doesn't handle filenames with spaces well
-src_config=$(realpath "$(dirname $0)")/.config
+# src is the path to the directory the script is run from
+src=$(realpath "$(dirname $0)")
 dest_config="${XDG_CONFIG_HOME:-$HOME/.config}"
-ln_opts="-s -f -v"
+dest_data="${XDG_DATA_HOME:-$HOME/.local/share}"
+ln_flags="-s -f -v"
 script_name="$(basename $0)"
 
 if [ ! -d $src ];then
@@ -18,11 +19,12 @@ if [ ! -w $dest ];then
 fi
 
 # Create symlinks to all the files in $1 in $2 recursively($1 and $2 are directories)
-# Automatically creates necessary subdirectories
+# Automatically creates necessary subdirectories. It doesn't handle filenames with spaces well
 linkfiles () {
   cd "$1"
   mkdir -pv $(find -type d | sed "s|^\./|$2/|")
-  find -type f | sed 's|^\./||' | xargs -I _ ln $ln_opts "$1"/_ "$2"/_
+  find -type f | sed 's|^\./||' | xargs -I _ ln $ln_flags "$1"/_ "$2"/_
 }
 
-linkfiles "$src_config" "$dest_config"
+linkfiles "$src/.config" "$dest_config"
+linkfiles "$src/.local/share" "$dest_data"
