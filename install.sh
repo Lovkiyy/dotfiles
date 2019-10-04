@@ -28,3 +28,6 @@ linkfiles () {
 
 linkfiles "$src/.config" "$dest_config"
 linkfiles "$src/.local/share" "$dest_data"
+
+ln $ln_flags "$src/.profile" "$HOME"
+ln $ln_flags "$src/.mkshrc" "$HOME"
