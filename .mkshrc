@@ -1,4 +1,4 @@
-DIR="$HOME/.config/mksh"
+DIR="${XDG_CONFIG_HOME:-$HOME/.config}/mksh"
 source $DIR/functions
 source $DIR/alias
 
