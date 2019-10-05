@@ -31,3 +31,4 @@ linkfiles "$src/.local/share" "$dest_data"
 
 ln $ln_flags "$src/.profile" "$HOME"
 ln $ln_flags "$src/.mkshrc" "$HOME"
+ln $ln_flags "$src/bin" "$HOME"
