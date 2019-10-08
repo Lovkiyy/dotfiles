@@ -57,10 +57,7 @@ enable-scroll = false
 format = <label>
 label = "猪 %percentage%%"
 
-; color of this module is lighter because
-; it seems pale on yellow background
-format-foreground = #ffffff
-color = ${colors.yellow}
+color = ${colors.green}
 inherit = module/style
 
 [module/date]
