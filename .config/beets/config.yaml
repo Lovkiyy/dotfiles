@@ -1,2 +1,3 @@
 plugins: edit
-library: ~/usr/musc/library.db
+library: ~/usr/music/library.db
+directory: ~/usr/music
