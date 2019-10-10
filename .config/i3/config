@@ -23,7 +23,7 @@ bindsym $mod+w exec $BROWSER
 
 # dmenu
 bindsym $mod+d exec dmenu_exec
-bindsym $mod+Shift+d exec j4-dmenu-desktop --dmenu='dmenu-color -i -l 15'
+bindsym $mod+Shift+d exec i3-dmenu-desktop --dmenu='dmenu-color -i -l 15'
 
 # Music
 bindsym $mod+p exec playerctl -p cmus play-pause
