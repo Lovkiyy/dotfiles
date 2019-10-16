@@ -1,7 +1,3 @@
-[colors]
-background = #32302f
-foreground = #ebdbb2
-
 [bar/main]
 width = 100%
 height = 18
@@ -9,8 +5,8 @@ height = 18
 ; See https://github.com/polybar/polybar/issues/591
 fixed-center = false
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = #32302f
+foreground = #ebdbb2
 
 padding-left = 0
 padding-right = 2
