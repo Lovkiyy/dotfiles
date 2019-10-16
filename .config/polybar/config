@@ -7,6 +7,8 @@ fixed-center = false
 
 background = #32302f
 foreground = #ebdbb2
+blue = #458588
+red = #cc241d
 
 padding-left = 0
 padding-right = 2
@@ -98,16 +100,14 @@ label-mode = %mode%
 label-mode-padding = 1
 
 label-focused = %icon%
-label-focused-background = #689d6a
+label-focused-background = ${root.blue}
 label-focused-padding = 1
 
 label-unfocused = %icon%
-;label-unfocused-foreground = #928374
 label-unfocused-padding = 1
 
 label-urgent = %icon%
-label-urgent-foreground = #000000
-label-urgent-background = #c64e3d
+label-urgent-background = ${root.red}
 label-urgent-padding = 1
 
 label-visible = %icon%
