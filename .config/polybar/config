@@ -21,7 +21,7 @@ font-1 = Material Design Icons:size=12;2
 font-2 = IPAPGothic:size=11;4
 
 modules-left = i3
-modules-right = music backlight pulseaudio battery-comb date updates
+modules-right = music backlight pulseaudio battery-comb date
 modules-center =
 
 tray-position = right
@@ -58,12 +58,6 @@ exec = mpris-status.sh
 interval = 5
 
 label = " %output%"
-
-[module/updates]
-type = custom/script
-exec = updates.sh
-label = " %output%"
-interval = 120
 
 [module/pulseaudio]
 type = internal/pulseaudio
