@@ -122,6 +122,9 @@ filetype plugin on
   nnoremap j gj
   nnoremap k gk
 
+  " remove trailing whitespace
+  nnoremap <leader>c :%s/\s\+$//eg<CR>
+
   " Better split movement
   nnoremap <C-h> <C-w>h
   nnoremap <C-j> <C-w>j
@@ -141,9 +144,6 @@ filetype plugin on
 
 " Disable autocomment on newline
 autocmd FileType * setlocal formatoptions-=cro
-
-" Automatically delete all trailing whitespace on save. TODO: retain cursor position
-autocmd BufWritePre * %s/\s\+$//e
 
 autocmd BufRead *mksh/* set filetype=sh
 " Filetype specific
