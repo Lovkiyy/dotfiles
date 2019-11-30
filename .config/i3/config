@@ -6,14 +6,28 @@ focus_follows_mouse no
 for_window [class="^.*"] border pixel 2
 gaps inner 3
 floating_maximum_size -1 x 800
+font pango:mono 10
 
 # Startup
-exec_always --no-startup-id bars
-
 exec --no-startup-id xset r rate 300 50
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:toggle,altwin:swap_lalt_lwin,ctrl:nocaps"
 exec --no-startup-id hsetroot -fill "${XDG_CONFIG_HOME:-$HOME/.config}"/wall
 exec --no-startup-id dex -a -s "${XDG_CONFIG_HOME:-$HOME/.config}"/autostart
+
+# Bar
+bar {
+  status_command    i3blocks
+  position          top
+
+  colors {
+    background          #32302f
+    statusline          #ebdbb2
+
+    urgent_workspace    #cc241d  #cc241d  #ebdbb2
+    focused_workspace   #458588  #458588  #ebdbb2
+    inactive_workspace  #1d2021  #1d2021  #a89984
+  }
+}
 
 # Apps
 bindsym $mod+Return exec $TERMINAL
