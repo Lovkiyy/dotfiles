@@ -1,7 +1,0 @@
-#!/bin/sh
-killall -q polybar
-
-sleep 1s
-
-exec polybar main &
-echo "Bars Launched..."
