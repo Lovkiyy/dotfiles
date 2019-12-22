@@ -1,3 +1,6 @@
-plugins: edit
+plugins: edit fetchart embedart
 library: ~/usr/music/library.db
 directory: ~/usr/music
+
+embedart:
+  ifempty: yes
