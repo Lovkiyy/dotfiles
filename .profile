@@ -8,6 +8,7 @@ export BROWSER=qutebrowser
 export TERMINAL=alacritty
 
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"
+export GPODDER_HOME="$HOME/usr/gpodder"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export _FASD_DATA="$XDG_DATA_HOME/fasd"
 export PASSWORD_STORE_DIR="$HOME/usr/pass"
