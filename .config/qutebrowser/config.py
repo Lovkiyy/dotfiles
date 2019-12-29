@@ -58,6 +58,10 @@ c.content.user_stylesheets = ["$XDG_CONFIG_HOME/qutebrowser/gruvbox-all.css"]
 # Toggle stylesheet
 config.bind(',n','config-cycle content.user_stylesheets $XDG_CONFIG_HOME/qutebrowser/gruvbox-all.css ""')
 
+# Spawn mpv
+config.bind(',m', 'hint links spawn mpv {hint-url}')
+config.bind(',M', 'spawn mpv {url}')
+
 # Toggle socks proxy via tor
 config.bind(',t','config-cycle -p content.proxy socks://localhost:9050 system')
 
