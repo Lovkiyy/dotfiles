@@ -1,8 +1,3 @@
-# Copy password to be pasted only once
-pc () {
-  pass $@ | sed 1q | xclip -sel clipboard -l 1
-}
-
 # Grep using find
 gf () {
   grep --ignore-case --no-messages --color=auto $1 \
