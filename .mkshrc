@@ -3,7 +3,7 @@ source $DIR/functions
 source $DIR/alias
 
 HISTFILE="$XDG_DATA_HOME/mksh-history"
-HISTSIZE=10000
+HISTSIZE=20000
 
 # Launch X on tty1 after login
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
