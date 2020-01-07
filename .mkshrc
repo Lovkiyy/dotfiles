@@ -5,11 +5,6 @@ source $DIR/alias
 HISTFILE="$XDG_DATA_HOME/mksh-history"
 HISTSIZE=20000
 
-# Launch X on tty1 after login
-if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
-  startx /usr/bin/i3 > /dev/null 2>&1
-fi
-
 # Less config
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
