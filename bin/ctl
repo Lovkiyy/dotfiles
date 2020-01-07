@@ -5,11 +5,21 @@ screen_blank () {
 }
 
 set_wallpaper () {
-  hsetroot -tile "$1"
+  if [ "$WAYLAND_DISPLAY" ];then
+    swaybg "$1"
+  else
+    hsetroot -tile "$1"
+  fi
 }
 
 screenshot () {
-  ffmpeg -f x11grab -video_size 1600x900 -i $DISPLAY -vframes 1 $HOME/usr/img/$(echo $(date "+%m%d%H%M%S"))screen.png
+  DIR="$HOME/usr/img"
+  FILE="$(date "+%m%d%H%M%S")screen.png"
+  if [ "$WAYLAND_DISPLAY" ];then
+    grim "$DIR/$FILE"
+  else
+    ffmpeg -f x11grab -video_size 1600x900 -i $DISPLAY -vframes 1 "$DIR/$FILE"
+  fi
 }
 
 battery_status () {
