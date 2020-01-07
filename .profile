@@ -16,3 +16,8 @@ export PASSWORD_CLIP_TIME="120"
 export QT_QPA_PLATFORMTHEME=gtk2
 export LESSHISTFILE=-
 export LESS="-R -M"
+
+export XDG_SESSION_TYPE=wayland
+export QT_QPA_PLATFORM=wayland
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
