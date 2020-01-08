@@ -21,3 +21,4 @@ export XDG_SESSION_TYPE=wayland
 export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
+export XDG_CURRENT_DESKTOP=Unity
