@@ -20,6 +20,7 @@
         set mouse=a             " Mouse support
         set omnifunc=syntaxcomplete#Complete
         set clipboard=unnamed
+        scriptencoding utf-8
 
 " Keybindings in russian layout
         set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -53,7 +54,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
-"Plug 'junegunn/goyo.vim'
+Plug 'mileszs/ack.vim'
 call plug#end()
 filetype plugin on
 
@@ -75,6 +76,8 @@ filetype plugin on
   let g:lightline.tabline = {
       \ 'left': [ [ 'tabs' ] ],
       \ 'right': [ [  ] ] }
+
+  let g:ackprg = 'ag --nogroup --nocolor --column'
 
   set noshowmode
 
