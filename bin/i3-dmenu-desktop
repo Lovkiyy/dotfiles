@@ -5,6 +5,8 @@
 #
 # No dependencies except for perl ≥ v5.10
 
+# This script has been patched to work with sway and shouldn't be used with i3
+
 use strict;
 use warnings qw(FATAL utf8);
 use Data::Dumper;
@@ -474,10 +476,10 @@ EOT
     if (exists($app->{StartupNotify}) && !$app->{StartupNotify}) {
         $nosn = '--no-startup-id';
     }
-    $cmd = qq|exec $nosn "$exec"|;
+    $cmd = qq|exec $nosn $exec|;
 }
 
-system('i3-msg', $cmd) == 0 or die "Could not launch i3-msg: $?";
+system('swaymsg', $cmd) == 0 or die "Could not launch swaymsg: $?";
 
 =encoding utf-8
 
