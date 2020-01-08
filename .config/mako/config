@@ -1,0 +1,9 @@
+background-color=#282828
+text-color=#ebdbb2
+border-color=#ebdbb2
+
+width=260
+margin=5,5
+padding=8
+border-size=3
+icon-path=/usr/share/icons/Papirus-dark
