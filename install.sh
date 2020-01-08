@@ -5,6 +5,7 @@ dest_config="${XDG_CONFIG_HOME:-$HOME/.config}"
 dest_data="${XDG_DATA_HOME:-$HOME/.local/share}"
 ln_flags="-s -f -v"
 script_name="$(basename $0)"
+systemd_user_services="syncthing tldr.timer cmus-update-cache.timer"
 
 if [ ! -d $src ];then
   echo $script_name: $src does not exist or is not a directory; exit 1
@@ -32,3 +33,7 @@ linkfiles "$src/.local/share" "$dest_data"
 ln $ln_flags "$src/.profile" "$HOME"
 ln $ln_flags "$src/.mkshrc" "$HOME"
 ln $ln_flags "$src/bin" "$HOME"
+
+for service in $systemd_user_services;do
+  systemctl --user is-enabled $service || systemctl --user enable $service
+done
