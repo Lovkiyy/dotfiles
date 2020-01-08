@@ -8,7 +8,7 @@ font pango:mono 9
 # Hide cursor after 2 seconds with no activity on cursor
 seat * hide_cursor 2000
 
-output * bg "${XDG_CONFIG_HOME:-$HOME/.config}"/wall fill
+output * bg "$HOME/usr/img/wall"/wall fill
 
 input * {
   xkb_layout  us,ru
