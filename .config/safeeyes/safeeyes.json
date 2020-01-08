@@ -1,7 +1,7 @@
 {
     "allow_postpone": true,
     "long_break_duration": 180,
-    "long_break_interval": 48,
+    "long_break_interval": 60,
     "long_breaks": [
         {
             "name": "Walk for a while"
@@ -68,7 +68,7 @@
             "version": "0.0.3"
         },
         {
-            "enabled": true,
+            "enabled": false,
             "id": "smartpause",
             "settings": {
                 "idle_time": 5,
@@ -104,7 +104,7 @@
     "pre_break_warning_time": 10,
     "rpc_port": 7200,
     "short_break_duration": 30,
-    "short_break_interval": 6,
+    "short_break_interval": 10,
     "short_breaks": [
         {
             "name": "Tightly close your eyes"
