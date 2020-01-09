@@ -26,7 +26,7 @@ inotes () {
 }
 
 passgen () {
-  sed 15q /dev/urandom | tr -dc 'a-zA-Z0-9-!?:;<>[]{}.,/\@#$%^&*()_+~' | fold -w ${1:-20} | sed 1q
+  sed 1500q /dev/urandom | tr -dc 'a-zA-Z0-9-!?:;<>[]{}.,/\@#$%^&*()_+~' | fold -w ${1:-20} | sed ${2:-1}q
 }
 
 run () {
