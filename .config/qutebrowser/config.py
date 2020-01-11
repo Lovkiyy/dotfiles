@@ -25,14 +25,14 @@ c.aliases = {'w': 'session-save',
 
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'aw': 'https://wiki.archlinux.org/?search={}',
-    'i': 'https://yandex.ru/images/search?text={}',
+    'img': 'https://yandex.ru/images/search?text={}',
     'w': 'https://en.wikipedia.org/w/index.php?search={}',
     'wru': 'https://ru.wikipedia.org/w/index.php?search={}',
     'gh': 'https://github.com/search?q={}',
     'j': 'https://jisho.org/search/{}',
     'ya': 'https://yandex.ru/search/?text={}',
     'yama': 'https://market.yandex.ru/search?text={}&local-offers-first=1',
-    'a': 'https://myanimelist.net/search/all?q={}'}
+    'mal': 'https://myanimelist.net/search/all?q={}'}
 
 c.bindings.commands = {
         'insert': {
