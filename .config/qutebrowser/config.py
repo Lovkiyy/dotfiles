@@ -23,6 +23,7 @@ c.aliases = {'w': 'session-save',
         'qa': 'quit',
         'cs': 'config-source'}
 
+c.url.default_page = "https://archlinux.org/news"
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
     'aw': 'https://wiki.archlinux.org/?search={}',
     'img': 'https://yandex.ru/images/search?text={}',
