@@ -34,4 +34,6 @@ alias ls="ls -hNF --color=tty --group-directories-first"
 alias la="ls -lAh"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias dmesg="sudo dmesg --ctime --color=always"
+alias ffprobe="ffprobe -hide_banner"
+alias ffmpeg="ffmpeg -hide_banner"
 alias cat=bat
