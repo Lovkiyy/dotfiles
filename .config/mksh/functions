@@ -22,7 +22,7 @@ iman () {
 
 inotes () {
   dir="$HOME/usr/notes"
-  choice="$(cd "$dir" && fd . -t f -E .git -E *.jpg -E *.png -E *.csv -E calcurse | fzf --height 8)" && "$EDITOR" "$dir"/"$choice"
+  choice="$(cd "$dir" && fd . -t f -E .git -E *.jpg -E *.png -E *.csv -E *.tsv -E calcurse | fzf --height 8)" && "$EDITOR" "$dir"/"$choice"
 }
 
 passgen () {
