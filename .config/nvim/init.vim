@@ -160,3 +160,4 @@ autocmd FileType go set noexpandtab shiftwidth=0
 autocmd FileType go nnoremap <leader>t :!go test -v<CR>
 
 autocmd FileType python nnoremap <leader>c :w<CR> :!python %<CR>
+autocmd FileType python set colorcolumn=80
