@@ -1,5 +1,6 @@
 #!/bin/sh
 # This script returns latitude and longtitude separated by comma. Requires jq
+umask 066
 file="${XDG_DATA_HOME:-$HOME/.local/share}/coordinates"
 coord="$(curl -s https://ipinfo.io/geo | jq .loc | tr -d \" | tr ',' ':')"
 
