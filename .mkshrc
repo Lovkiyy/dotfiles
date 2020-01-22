@@ -2,7 +2,7 @@ DIR="${XDG_CONFIG_HOME:-$HOME/.config}/mksh"
 source $DIR/functions
 source $DIR/alias
 
-HISTFILE="$XDG_DATA_HOME/mksh-history"
+HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/mksh-history"
 HISTSIZE=20000
 
 # Less config
