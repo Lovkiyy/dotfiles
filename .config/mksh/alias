@@ -3,22 +3,17 @@ alias xcopy='xclip -i -selection clipboard'
 alias xpaste='xclip -o -selection clipboard'
 
 alias vdn="vd $HOME/usr/notes/base"
-alias sc="systemctl --user"
-alias ssc="sudo systemctl"
+alias ap="nvim $HOME/usr/notes/handbook/apps.md"
 alias ce=config_edit
 alias ns=inotes
-alias ap="nvim $HOME/usr/notes/handbook/apps.md"
-alias me=mega-exec
-alias ka=killall
+alias sc="systemctl --user"
+alias ssc="sudo systemctl"
 alias v=nvim
 alias r=ranger
 alias p="sudo pacman --color=always"
 alias y="yay --color=always"
 alias gi="grep -i"
 alias mk="mkdir -pv"
-alias own="sudo chown -R $USER:$USER"
-alias ansicat="iconv -f CP437"
-alias testmic="arecord -vvv -f dat /dev/null"
 alias mpweb="mpv av://v4l2:/dev/video0"
 alias lsbk="sudo lsblk -o NAME,MOUNTPOINT,SIZE,FSUSED,FSTYPE,PTTYPE,RM"
 
