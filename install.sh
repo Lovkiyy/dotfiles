@@ -8,24 +8,16 @@ script_name="$(basename $0)"
 systemd_user_services="syncthing tldr.timer cmus-update-cache.timer"
 vimplug="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
 
-if [ ! -d $src ];then
-  echo $script_name: $src does not exist or is not a directory; exit 1
+if [ ! -d "$src" ];then
+  echo "$script_name": "$src" does not exist or is not a directory; exit 1
 fi
 
-if [ ! -d $dest ];then
-  echo $script_name: $dest does not exist or is not a directory; exit 1
-fi
-
-if [ ! -w $dest ];then
-  echo $script_name: $dest is not writable; exit 1
-fi
-
-# Create symlinks to all the files in $1 in $2 recursively($1 and $2 are directories)
-# Automatically creates necessary subdirectories. It doesn't handle filenames with spaces well
+# Create symlinks to all the files in $1 in $2 recursively($1 and $2 ought to be directories)
+# Automatically creates necessary subdirectories. Doesn't handle filenames with spaces well
 linkfiles () {
-  cd "$1"
-  mkdir -pv $(find -type d | sed "s|^\./|$2/|")
-  find -type f | sed 's|^\./||' | xargs -I _ ln $ln_flags "$1"/_ "$2"/_
+  cd "$1" || exit 1
+  mkdir -pv $(find . -type d | sed "s|^\./|$2/|")
+  find . -type f | sed 's|^\./||' | xargs -I _ ln $ln_flags "$1"/_ "$2"/_
 }
 
 linkfiles "$src/.config" "$dest_config"
@@ -41,7 +33,7 @@ echo "Copying files from to /etc. Password may be required"
 sudo rsync -r "$src/etc/" /etc
 
 for service in $systemd_user_services;do
-  systemctl --user is-enabled $service --quiet || systemctl --user enable $service
+  systemctl --user is-enabled "$service" --quiet || systemctl --user enable "$service"
 done
 
 # Install vim-plug and plugins for neovim
