@@ -35,7 +35,7 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
   timeout 600 'systemctl suspend'
 
-exec swayidle before-sleep 'physlock -dsm'
+exec swayidle before-sleep 'swaylock -c #282828'
 
 # Apps
 bindsym $mod+Return exec $TERMINAL
