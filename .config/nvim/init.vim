@@ -53,8 +53,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf'
-Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 filetype plugin on
 
