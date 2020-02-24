@@ -66,3 +66,8 @@ if lsmod | grep -wq "^pcspkr";then
   echo "Removing pcspkr(beep) module. Password may be required"
   echo blacklist pcspkr | sudo tee /etc/modprobe.d/nobeep.conf
 fi
+
+# Run scripts that are not part of this repo
+if [ -x "$HOME/src/scripts/drive.sh" ];then
+  "$HOME/src/scripts/drive.sh"
+fi
