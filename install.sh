@@ -6,6 +6,7 @@ dest_data="${XDG_DATA_HOME:-$HOME/.local/share}"
 ln_flags="-s -f -v"
 script_name="$(basename $0)"
 systemd_user_services="syncthing tldr.timer cmus-update-cache.timer"
+vimplug="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
 
 if [ ! -d $src ];then
   echo $script_name: $src does not exist or is not a directory; exit 1
@@ -37,3 +38,14 @@ ln $ln_flags "$src/bin" "$HOME"
 for service in $systemd_user_services;do
   systemctl --user is-enabled $service || systemctl --user enable $service
 done
+
+# Install vim-plug and plugins for neovim
+if [ ! -f "$vimplug" ];then
+  curl --fail --location --create-dirs --silent --output "$vimplug" \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+nvim -c ':PlugInstall' -c ':q' -c ':q'
+
+if ! grep -e "$USER" /etc/passwd | grep "/bin/mksh" > /dev/null;then
+  chsh -s /bin/mksh
+fi
