@@ -8,8 +8,6 @@ font pango:mono 9
 # Hide cursor after 2 seconds with no activity on cursor
 seat * hide_cursor 2000
 
-output * bg "$HOME/usr/img/wall"/wall fill
-
 input * {
   xkb_layout  us,ru
   xkb_variant ,winkeys
@@ -26,6 +24,7 @@ exec_always {
   gsettings set $gnome-schema cursor-theme "Adwaita"
 }
 
+exec swaybg -o '*' -m fill -i "$HOME/usr/img/wall/wall"
 exec inactive-windows-transparency.py -o 0.8
 exec dex -a -s "${XDG_CONFIG_HOME:-$HOME/.config}"/autostart
 exec swayidle -w \
