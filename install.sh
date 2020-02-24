@@ -3,7 +3,7 @@
 src=$(realpath "$(dirname $0)")
 dest_config="${XDG_CONFIG_HOME:-$HOME/.config}"
 dest_data="${XDG_DATA_HOME:-$HOME/.local/share}"
-ln_flags="-s -f -v"
+ln_flags="-s -f"
 script_name="$(basename $0)"
 systemd_user_services="syncthing tldr.timer cmus-update-cache.timer"
 vimplug="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
@@ -35,8 +35,13 @@ ln $ln_flags "$src/.profile" "$HOME"
 ln $ln_flags "$src/.mkshrc" "$HOME"
 ln $ln_flags "$src/bin" "$HOME"
 
+mkdir -p "$HOME/usr/vid" "$HOME/var/bak" "$HOME/var/iso"
+
+echo "Copying files from to /etc. Password may be required"
+sudo rsync -r "$src/etc/" /etc
+
 for service in $systemd_user_services;do
-  systemctl --user is-enabled $service || systemctl --user enable $service
+  systemctl --user is-enabled $service --quiet || systemctl --user enable $service
 done
 
 # Install vim-plug and plugins for neovim
@@ -46,6 +51,16 @@ if [ ! -f "$vimplug" ];then
 fi
 nvim -c ':PlugInstall' -c ':q' -c ':q'
 
-if ! grep -e "$USER" /etc/passwd | grep "/bin/mksh" > /dev/null;then
+if ! grep -e "$USER" /etc/passwd | grep -q "/bin/mksh";then
   chsh -s /bin/mksh
+fi
+
+if ! grep -q $HOME/tmp /etc/fstab;then
+  echo "Adding tmpfs mount on $HOME/tmp to /etc/fstab. Password may be required"
+  printf "tmpfs\t$HOME/tmp\ttmpfs\trw,nodev,nosuid\t0\t0\n" | sudo tee -a /etc/fstab
+fi
+
+if lsmod | grep -wq "^pcspkr";then
+  echo "Removing pcspkr(beep) module. Password may be required"
+  echo blacklist pcspkr | sudo tee /etc/modprobe.d/nobeep.conf
 fi
