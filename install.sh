@@ -27,7 +27,17 @@ ln $ln_flags "$src/.profile" "$HOME"
 ln $ln_flags "$src/.mkshrc" "$HOME"
 ln $ln_flags "$src/bin" "$HOME"
 
-mkdir -p "$HOME/usr/vid" "$HOME/var/bak" "$HOME/var/iso"
+mkdir -p "$HOME/usr/vid" "$HOME/var/bak" "$HOME/var/iso" "$HOME/tmp"
+for dir in usr/notes usr/music usr/doc usr/img src;do
+  mkdir -p $HOME/sync/$(basename "$dir")
+  if [ -h "$HOME/$dir" ] && [ "$(readlink $HOME/$dir)" = "$HOME/sync/$(basename $dir)" ];then
+    true
+  elif [ -h "$HOME/$dir" ];then
+    ln -sfT $HOME/sync/$(basename "$dir") "$HOME/$dir"
+  else
+    ln -siT $HOME/sync/$(basename "$dir") "$HOME/$dir"
+  fi
+done
 
 echo "Copying files from to /etc. Password may be required"
 sudo rsync -r "$src/etc/" /etc
