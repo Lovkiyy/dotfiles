@@ -3,7 +3,7 @@ choice=$(printf "suspend\nlock\npoweroff\nreboot" | dmenu-color) || exit 1
 if [ $choice = "suspend" ];then
   systemctl suspend
 elif [ $choice = "lock" ];then
-  physlock -dsm
+  swaylock -c "#282828"
 elif [ $choice = "poweroff" ];then
   systemctl poweroff
 elif [ $choice = "reboot" ];then
