@@ -81,12 +81,11 @@ bindsym Print exec ctl screenshot
 bindsym $mod+Shift+p exec menu-system
 bindsym $mod+Shift+v exec start-vm
 bindsym $mod+b exec menu-book
-bindsym $mod+grave exec menu-unicode
 
-# Sticky window
-bindsym $mod+g sticky toggle; floating toggle; [floating] resize set 900 px 650 px; move position center; [floating con_id=__focused__] move scratchpad; scratchpad show
-bindsym $mod+s scratchpad show
+# Drop-down alacritty
+bindsym $mod+grave exec dropdown-alacritty
 
+# Floating windows
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
