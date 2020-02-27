@@ -1,0 +1,14 @@
+#!/bin/sh
+class="dropdown-alacritty"
+if swaymsg -t get_tree | grep -B34 -we "\"app_id\": \"$class\"" | grep  "\"focused\": true";then
+  swaymsg -- move scratchpad
+elif swaymsg -t get_tree | grep -B34 -we "\"app_id\": \"$class\"";then
+  swaymsg -- scratchpad show
+  swaymsg -- "[app_id=\"$class\"] focus"
+else
+  swaymsg -- "for_window [app_id=\"$class\"] floating enable"
+  swaymsg -- "for_window [app_id=\"$class\"] sticky enable"
+  swaymsg -- "for_window [app_id=\"$class\"] resize set width 40 ppt height 40 ppt"
+  swaymsg -- "for_window [app_id=\"$class\"] move up 20 ppt"
+  alacritty --class "$class"
+fi
