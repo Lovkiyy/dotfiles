@@ -1,6 +1,13 @@
-plugins: edit fetchart embedart
+plugins: edit fetchart embedart convert
 library: ~/usr/music/library.db
 directory: ~/usr/music
 
 embedart:
   ifempty: yes
+
+convert:
+  auto: yes
+  formats:
+    mp3:
+      command: ffmpeg -i $source -y -vn -aq 0 $dest
+      extension: mp3
